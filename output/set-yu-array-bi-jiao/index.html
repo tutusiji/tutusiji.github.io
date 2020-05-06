@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>Set() 与 Array() 比较 | TUTU的个人记录</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="Set() 与 Array() 比较 | TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="Set() 与 Array() 比较"/>
+    <meta property="og:url" content="https://www.tuziki.com/set-yu-array-bi-jiao/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUTU的个人记录"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.tuziki.com">TUTU的个人记录</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">码字</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/project">小项目</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://www.tuziki.com/QOEdciYBP/" class="tag">Array</a>
+            
+        </span>
+            <h1>Set() 与 Array() 比较</h1>
+            <span class="meta">
+            	Posted on
+              2020-05-05，3 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <p>React处理数据时经常遇到数据是由接口请求回来，每次触发props更新都会导致重新render，如果需要的数据是需要构造出新的数据，则一般会采用 <code>Array</code>的push方法，但是由于多次的render导致多次push导致数据重复，改为<code>Set()</code>数据类型则会自动过滤到重复的数据：</p>
+<p><strong>添加与删除</strong></p>
+<p><code>Set()</code> 添加数据用 <code>.add()</code>方法，删除数据用 <code>.delete()</code></p>
+<blockquote>
+<p><code>add</code>方法在添加数据时一次只能添加一条数据，<code>Array</code>在push时是可以一次添加多条数据<br>
+<img src="https://www.tuziki.com/post-images/1588689109315.png" alt="" loading="lazy"><br>
+<img src="https://www.tuziki.com/post-images/1588689123302.jpg" alt="" loading="lazy"></p>
+</blockquote>
+<p><code>Array</code> 添加数据用 <code>.push()</code>添加数据到数组尾部。<br>
+向数组的首位添加数据可以用<code>.unshift()</code></p>
+<p>合并多个数据用<code>.concat()</code> 将一个或者多个数组进行合并成一个新的数组，注意合并数组时被合并的数组数据会自动加到新数组的后面：<br>
+<img src="https://www.tuziki.com/post-images/1588689149697.png" alt="" loading="lazy"></p>
+<p><code>Array</code>在删除时，有多种办法：</p>
+<ul>
+<li><code>pop()</code> 删除数组最后一个元素并返回它</li>
+<li><code>shift()</code> 删除数组第一个元素并返回它</li>
+<li><code>arr[arr.length-1]</code> 选中数组最后一个数据</li>
+<li><code>arr.slice(-1)</code> 选中指定位置的元素及它以后的所有元素并返回，-1则是倒数第一个，<code>arrB = arrA.slice()</code> 为复制数组A给B</li>
+<li><code>arr.splice(n,m)</code> 从第n个元素开始删除原数组中m个元素，并返回这m个元素，<code>arr.splice(1,arr.length)</code>为清空数组</li>
+</ul>
+<p><strong>清空数组</strong></p>
+<ul>
+<li><code>arr.splice(0,arr.length)</code> 使用splice函数</li>
+<li><code>arr.length = 0</code> 给数组的length赋值为0</li>
+<li><code>arr = []</code> 直接赋予新数组 []</li>
+</ul>
+<p><em>效率比较：</em></p>
+<pre><code>  let a = [];
+  let b = [];
+  let c = [];
+  for (let i = 0; i &lt; 10000; i++) {
+    a.push(i);
+  }
+  console.time('splice');
+  a.splice(0, a.length);
+  console.timeEnd('splice');
+
+  for (let i = 0; i &lt; 10000; i++) {
+    b.push(i);
+  }
+  console.time('length');
+  b.length = 0;
+  console.timeEnd('length');
+
+  for (let i = 0; i &lt; 10000; i++) {
+    c.push(i);
+  }
+  console.time('赋值[]');
+  c = [];
+  console.timeEnd('赋值[]');
+</code></pre>
+<p>结果：</p>
+<pre><code>splice: 1757.174072265625ms
+length: 0.06396484375ms
+赋值[]: 0.095947265625ms
+</code></pre>
+<p>多次测试发现第二种方式最快，第三种其次，大数据量下 第一种最慢。</p>
+<blockquote>
+<p>数组的去重 和 排序</p>
+</blockquote>
+<p><code>a = Array.from(new Set(a)).sort()</code> 先去重，再排序</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju/">
+              <span class="post-title">
+                优化嵌套的条件判断语句&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+            <li class="list-inline-item">
+              <a href="https://tutusiji.github.io" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://www.tuziki.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted"><span><a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备14062482号</a>
+            <!-- TUTU的个人记录</span> -->
+            <!-- <br><a href="https://github.com/getgridea/gridea" class="Themeinfo"></a> -->
+          </p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+
