@@ -1,0 +1,32 @@
+{
+  "config": {
+    "branch": "develop",
+    "cname": "www.tuziki.com",
+    "domain": "https://www.tuziki.com",
+    "email": "123507356@q.com",
+    "password": "@huangkun589",
+    "platform": "sftp",
+    "port": 22,
+    "privateKey": "",
+    "remotePath": "/home/www_blog/",
+    "repository": "tutusiji.github.io",
+    "server": "111.231.241.98",
+    "token": "@hk123321",
+    "username": "root"
+  },
+  "comment": {
+    "commentPlatform": "gitalk",
+    "disqusSetting": {
+      "api": "",
+      "apikey": "",
+      "shortname": ""
+    },
+    "gitalkSetting": {
+      "clientId": "",
+      "clientSecret": "",
+      "owner": "",
+      "repository": ""
+    },
+    "showComment": false
+  }
+}
