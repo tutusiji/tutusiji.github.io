@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "content": "尽可能的用到所见所闻的技术手段。\r\nDemo：https://www.souxy.com/demo/shizijia/\r\n\r\n1、单纯的dom元素加css，还可以细分为定位法、浮动法\r\n2、css background filter 方法\r\n3、svg方法\r\n4、canvas方法\r\n5、vml方法\r\n6、伪类的content方法、伪类的拼接方法\r\n7、\"+\"字符方法\r\n8、iconfont方法\r\n9、base64方法\r\n10、background-clip方法\r\n",
+      "content": "尽可能的用到所见所闻的技术手段。\r\nDemo：<a href=\"https://www.souxy.com/demo/shizijia/\" target=\"_blank\">www.souxy.com/demo/shizijia</a>\r\n\r\n1、单纯的dom元素加css，还可以细分为定位法、浮动法\r\n2、css background filter 方法\r\n3、svg方法\r\n4、canvas方法\r\n5、vml方法\r\n6、伪类的content方法、伪类的拼接方法\r\n7、\"+\"字符方法\r\n8、iconfont方法\r\n9、base64方法\r\n10、background-clip方法\r\n",
       "data": {
         "title": "前端有多少种方式实现一个十字架？",
         "date": "2020-05-13 02:31:12",
