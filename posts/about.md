@@ -11,6 +11,13 @@ isTop: false
 
 web前端开发工程师。 
 🐧🐧: 123507356
+
+### 捉虫小技
+| 项目名 | 访问地址   | 技术栈 | 备注 |
+| ----- | --------- | ------ | ------- |
+| Find You | <a href="http://souxy.com/map.html" target="_blank">souxy.com/map.html</a> | 腾讯地图API |已知A点和距离求B点|
+| 加班计时器  | <a href="http://souxy.com/clock" target="_blank">souxy.com/clock</a>     | vue |加班倒计时工具|
+
 <!-- 
 ### 专业能力
 
