@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "content": "1、CSP: Content-Security-Policy详解\r\nhttps://www.jianshu.com/p/74ea9f0860d2\r\nhttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy\r\n\r\n2、XSS\r\n3、CSRF\r\n",
+      "data": {
+        "title": "web安全记事",
+        "date": "2020-05-16 16:34:06",
+        "tags": [],
+        "published": false,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "web-an-quan-ji-shi"
+    },
+    {
       "content": "尽可能的用到所见所闻的技术手段。\r\nDemo：<a href=\"https://www.souxy.com/demo/shizijia/\" target=\"_blank\">www.souxy.com/demo/shizijia</a>\r\n\r\n1、单纯的dom元素加css，还可以细分为定位法、浮动法\r\n2、css background filter 方法\r\n3、svg方法\r\n4、canvas方法\r\n5、vml方法\r\n6、伪类的content方法、伪类的拼接方法\r\n7、\"+\"字符方法\r\n8、iconfont方法\r\n9、base64方法\r\n10、background-clip方法\r\n",
       "data": {
         "title": "前端有多少种方式实现一个十字架？",
