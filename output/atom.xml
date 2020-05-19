@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.tuziki.com</id>
     <title>TUTU的个人记录</title>
-    <updated>2020-05-12T18:42:28.093Z</updated>
+    <updated>2020-05-14T11:55:42.760Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.tuziki.com"/>
     <link rel="self" href="https://www.tuziki.com/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://www.tuziki.com/images/avatar.png</logo>
     <icon>https://www.tuziki.com/favicon.ico</icon>
     <rights>All rights reserved 2020, TUTU的个人记录</rights>
+    <entry>
+        <title type="html"><![CDATA[nginx开启gzip压缩]]></title>
+        <id>https://www.tuziki.com/nginx-kai-qi-gzip-ya-suo/</id>
+        <link href="https://www.tuziki.com/nginx-kai-qi-gzip-ya-suo/">
+        </link>
+        <updated>2020-05-14T11:53:36.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[前端有多少种方式实现一个十字架？]]></title>
         <id>https://www.tuziki.com/qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia/</id>
@@ -72,12 +79,5 @@
         <link href="https://www.tuziki.com/set-yu-array-bi-jiao/">
         </link>
         <updated>2020-05-05T14:31:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[优化嵌套的条件判断语句]]></title>
-        <id>https://www.tuziki.com/you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju/</id>
-        <link href="https://www.tuziki.com/you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju/">
-        </link>
-        <updated>2020-05-05T14:30:36.000Z</updated>
     </entry>
 </feed>
