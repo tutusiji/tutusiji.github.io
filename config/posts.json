@@ -1,500 +1,500 @@
 {
-  "posts": [
-    {
-      "content": "一、整体页面划分及架构图\r\n![](https://www.tuziki.com/post-images/1589822830450.png)\r\n\r\n前言，本项目已将【项目】与【团队】数据合并称为【归档】\r\n\r\n1、左边栏是数据源；\r\n        这里展示与当前用户所有相关联的数据，点击操作勾选多个，则可以叠加显示多个【归档】的数据在中间区域显示。\r\n        上部分为数据源操作，下部分为当前已选中的数据。\r\n\r\n2、顶部是日期切换、视图切换、功能操作，用户中心；\r\n**日期切换**：可以操作当前已选中【归档】的时间维度，【我的工作】是月视图，日期切换为月份切换；【项目归档】为月视图，日期切换为月份切换；【团队归档】是周视图，时间切换则为周切换\r\n**视图切换**：分为【我的工作】、【项目归档】、【团队归档】。``我的工作`` 展示个人**每个月**的录入数据；``项目归档``展示左侧栏已勾选的所有项目在**每个月**的录入数据；``团队归档``则是展示左侧已勾选的所有项目在**每一周**里所有项目**参与人**的录入数据\r\n**功能操作**：包括创建归档（团队归档、项目归档）、周报展示、月报展示、年报展示\r\n**用户中心**：包括用户相关信息的修改登记，头像、昵称、电话、邮箱\r\n\r\n3、中间区域是数据展示，分为月视图、周视图。\r\n",
-      "data": {
-        "title": "【工作日历】开发架构图",
-        "date": "2020-05-19 01:26:24",
-        "tags": [],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "gong-zuo-ri-li-kai-fa-jia-gou-tu"
-    },
-    {
-      "content": "1、CSP: Content-Security-Policy详解\r\nhttps://www.jianshu.com/p/74ea9f0860d2\r\nhttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy\r\n\r\n2、XSS\r\n3、CSRF\r\n",
-      "data": {
-        "title": "web安全记事",
-        "date": "2020-05-16 16:34:06",
-        "tags": [],
-        "published": false,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "web-an-quan-ji-shi"
-    },
-    {
-      "content": "尽可能的用到所见所闻的技术手段。\r\nDemo：<a href=\"https://www.souxy.com/demo/shizijia/\" target=\"_blank\">www.souxy.com/demo/shizijia</a>\r\n\r\n1、单纯的dom元素加css，还可以细分为定位法、浮动法\r\n2、css background filter 方法\r\n3、svg方法\r\n4、canvas方法\r\n5、vml方法\r\n6、伪类的content方法、伪类的拼接方法\r\n7、\"+\"字符方法\r\n8、iconfont方法\r\n9、base64方法\r\n10、background-clip方法\r\n",
-      "data": {
-        "title": "前端有多少种方式实现一个十字架？",
-        "date": "2020-05-13 02:31:12",
-        "tags": [],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia"
-    },
-    {
-      "content": "首先，你需要一个灵关一闪的idea。\r\n",
-      "data": {
-        "title": "怎样将一个idea从构思到实现",
-        "date": "2020-05-13 02:29:41",
-        "tags": [],
-        "published": false,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "zen-yang-jiang-yi-ge-idea-cong-gou-si-dao-shi-xian"
-    },
-    {
-      "content": "### 方法一：直接定义并且初始化，这种遇到数量少的情况可以用\r\n``var _TheArray = [[\"0-1\",\"0-2\"],[\"1-1\",\"1-2\"],[\"2-1\",\"2-2\"]]``\r\n\r\n### 方法二：未知长度的二维数组\r\n```javascript\r\nvar tArray = new Array();  //先声明一维\r\nfor(var k=0;k<i;k++){    //一维长度为i,i为变量，可以根据实际情况改变\r\n \r\ntArray[k]=new Array();  //声明二维，每一个一维数组里面的一个元素都是一个数组；\r\n \r\nfor(var j=0;j<p;j++){   //一维数组里面每个元素数组可以包含的数量p，p也是一个变量；\r\n \r\ntArray[k][j]=\"\";    //这里将变量初始化，我这边统一初始化为空，后面在用所需的值覆盖里面的值\r\n }\r\n}\r\n给定义的数组传入所需的值\r\ntArray[6][1]=5；//这样就可以将5的值传入到数组中，覆盖初始化的空\r\n```\r\n### 方法三：在这之前，以上两者方法都有问题，方法二，每次定义都初始化了，虽然后面可以动态修改，但是还是不方法\r\n\r\n所以我尝试了一种动态传入值到数组的方法\r\n\r\nps:一些在实践过程中遇到的数组有趣的现象\r\n\r\n本来以为二维数组可以像下面这样直接传入值\r\n```javascript\r\nfor(var a=0;a<i;a++){\r\n    tArray[a]=(matArray[a],addArray[a]); //matArray[a]和addArray[a]是两个数组，这两个数组直接传入tArray[a]中\r\n};\r\n```\r\n结果是tArray[a]中收到的是后面一个数组的值，matArray[a]的内容被忽略的，如果换一个位置，matArray[a]在后面，则传入的是addArray[a]的值。\r\n\r\n思考：简单的例子：\r\n代码如下:\r\n```javascript\r\nvar a=[1,2];\r\nvar b=[];\r\nb[0]=a;//把数组a作为b数组的元素传入b数组中\r\nalert(b[0][1]);  //2\r\n```\r\n上面是最简单的二维数组，\r\n上面例子换种写法：\r\n代码如下:\r\n```javascript\r\nvar b=[];\r\nb[0]=[1,2];//把数组[1,2]作为b数组的元素传入b数组中\r\nalert(b[0][1]);  //2\r\n```\r\n\r\n可以看出上面的b[0]=[1,2]是可以用的\r\n代码如下:\r\n\r\n```javascript\r\nfor(var a=0;a<i;a++){\r\n    tArray[a]=[ matArray[a],addArray[a] ];  //上面例子中的（）修改为[] 就可以成功的组成一个二维数组了\r\n};\r\n总结：方法三：\r\n代码如下:\r\n```javascript\r\nfor(var a=0;a<i;a++){\r\n    tArray[a]=[ aArray[a],bArray[a],cArray[a]]; 还可以增加dArray[a],eArray[a]\r\n};\r\n```\r\n这种情况适用于已知几个数组，把他们组合成一个二维数组情况\r\n\r\nJS 创建多维数组\r\n```javascript\r\n  var allarray=new Array();\r\n  var res=\"\";\r\n  function loaddata()\r\n  {\r\n   for(var i=0;i<3;i++)\r\n {\r\n var starth=i*200;\r\n var strarw=i*200;\r\n var endh=(i+1)*200;\r\n var endw=(i+1)*200;\r\n allarray[i]=new Array();\r\n allarray[i][0]=new Array();\r\n allarray[i][1]=new Array();\r\n allarray[i][0][0]=starth;\r\n allarray[i][0][1]=strarw;\r\n  allarray[i][1][0]=endh;\r\n allarray[i][1][1]=endw;\r\n }\r\n  for(var i=0;i<allarray.length;i++)\r\n  {\r\n    var sh=allarray[i][0][0];\r\n    var sw=allarray[i][0][1]\r\n     var eh=allarray[i][1][0];\r\n    var ew=allarray[i][1][1]\r\n    res+=\"第\"+i+\"个坐标的开始坐标是：\"+sh+\",\"+sw+\"结束坐标是：\"+eh+\",\"+ew+\"<br/>\";\r\n  }\r\n  document.getElementById(\"dv\").innerHTML=res;\r\n  }\r\n```",
-      "data": {
-        "title": "JavaScript -- 定义二维数组",
-        "date": "2020-05-07 00:22:55",
-        "tags": [
-          "Array"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "javascript-ding-yi-er-wei-shu-zu"
-    },
-    {
-      "content": "### 【Good Code】\r\n\r\n* [DataEditH5](http://souxy.com/demo/edit.html)\r\n\r\n### 【Old Idea】\r\n* 2011年 -- 基于地理位置的LBS商户美食推荐系统\r\n* 2012年 -- 第四方物流与供应链系统（类似现在的滴滴货车和货嘀运力调度中心http://data.tf56.com/huodi.html?city=1）\r\n* 2012年 —- 知识共享系统\r\n\r\n\r\n### 【project】数据可视化配置平台\r\n基于react + dva + redux的可视化配置数据平台的前端工作流程设计方案（不断完善中）\r\n\r\n解决需求：\r\n\r\n+ 解决管理后台动态可配置\r\n\r\n+ 解决数据图表动态添加修改可配置\r\n\r\n+ 解决数据源与数据图表可配置\r\n\r\n> 落地产品：类似阿里DataV，和常见的H5制作工具，灵活且功能实用。\r\n\r\n前端流程设计：\r\nhttps://kdocs.cn/l/sKOMtserU?f=101\r\n[文档] 大数据平台构建流程.pom\r\n\r\n### 【project】打造一套完整的访客系统，从前端到后台\r\n\r\n> 应用场景：从用户端的访客预约信息提交，到信息管理，再到线下访客机的实体验证，认证反馈。从软件到硬件，用户端到现场端，解决这一问题。\r\n\r\n1. 用户角色：访客信息录入—— H5、小程序、pc web 管理端\r\n\r\n2. 访客角色：访客信息查询——H5、小程序\r\n\r\n3. 访客机：访客角色验证、访客卡领取、用户&访客（团）批处理\r\n\r\n技术实现：\r\n\r\n前端：vue + vuex + taro = H5 & 小程序； react 管理端\r\n\r\n后台：nodejs + mangoDB\r\n\r\n<!-- 访客系统   会议预定系统   场馆预订系统  圣诞晚会抽票  摇奖系统  商品选购下订单  数据展示定制化平台 -->\r\n\r\n<!-- ### 【project】赛车拉力***\r\n实现平台：微信小游戏，实时对战3v3，2v2，个人障碍赛，个人竞速赛\r\n\r\n故事一：巴音布鲁克赛道\r\n\r\n故事二：罪恶都市赛道\r\n\r\n故事伞：乡村赛道\r\n\r\n实现技术栈：JS，webscoket，webgl3D，wechat SDK，nodejs，重力场\r\n\r\n> 模型设计、技术选型可以参考 https://bruno-simon.com/  ，操控可以参考微信小游戏模式、王者荣耀、吃鸡模式\r\nhttps://greensock.com/showcase/\r\n\r\n -->\r\n\r\n### 【project】网址收藏夹\r\n类似百度网址个性页。\r\n功能列表：\r\n\r\n1、可以导入html格式的网址收藏夹\r\n\r\n2、可以手动添加、删除、修改、查询，管理已有的收藏夹地址\r\n\r\n3、可以灵活拖动网址\r\n\r\n4、每个网址会自动检测该地址是否可以打开，若可以打开，则提取该网址ico作为图标\r\n\r\n5、所见即所得的交互方式\r\n\r\n> 可参考百度网址收藏夹\r\nhttps://www.baidu.com/\r\nhttps://withpinbox.com/\r\nhttp://yijee.esgao.cn/profile\r\nchrome://bookmarks/\r\n\r\n\r\n### 【project】工作日历系统\r\n可以用来管理日常工作的录入，类似mac系统自带的日历系统和google日历\r\n\r\n常用功能：\r\n\r\n1、工作颗粒度录入，以及该工作的项目归属\r\n\r\n2、团队项目管理\r\n\r\n3、数据统计分析、报表输出\r\n\r\n3、集成工时系统\r\n\r\n> 参考google日历\r\nhttps://calendar.google.com/calendar/r \r\n\r\n> https://fullcalendar.io/  \r\n> https://ui.toast.com/tui-calendar\r\n> https://element.eleme.cn/#/zh-CN/component/calendar\r\n> \r\n\r\n<!-- ### 【project】 精灵盒子\r\n\r\n一种集成内置全息投影、AR效果的，正方体，大概45cm * 45cm * 45cm，里面的游戏，可以渲染成为场景，沙盘，建筑或者塔防游戏，可以给人以AR或者全息投影的真实效果，通过内置计算模块和六面投影屏幕，从外向内看到的就是很逼真的场景，用户可以通过手机app、或者游戏手柄来操作里面的人物进行任务闯关，值得实现的游戏有《纪念碑谷》、《生化危机》 -->\r\n\r\n### 【project】 手势识别、声音识别来操作窗帘\r\n\r\n用手挥动来开关窗帘。用屋内摄像头捕捉识别人体手势，传送到后台进行分析，通过机器学习、手势识别技术，分析出是哪一种手势，再传出指令调动窗帘上安装的电机执行打开或者收起的效果。\r\n> 人体手势=>摄像头=>后端计算识别手势指令=>发出开关指令=>电机转动\r\n\r\n用声音来操控窗帘。\r\n> 人体声音=>麦克风=>后端计算识别声音指令=>发出开关指令=>电机转动\r\n\r\n从前端传输到后端的以中心计算的设计模式，也可以改为终端识别即可执行指令，即将摄像模块、计算模块、控制模块集成一体到终端中，在终端中完成一系列的操作。不需要进行网络传输，保证在离线模式下也可以正常使用。在大规模识别计算场景中，将计算服务放在终端，也是一种很不错的模式，远端只需要定期对终端进行服务升级。\r\n\r\n### 【project】 AI迷宫终结者\r\n\r\n先对迷宫算法进行策略算法实现，通过Tensorflow框架进行迷宫地图的算法模型训练，让其能力演变为对任意迷宫地图都能够做到图形识别，提取迷宫模型骨骼图亦或是点阵图，达到算法能够识别进行的程度。交互方式上，从起点或者图中任意一点划出一条红线连接到终点。\r\n\r\n> 用户上传迷宫图=>迷宫模型提取=>算法计算最优路径=>绘制路线\r\n<img src=\"https://img-bbs.csdn.net/upload/201508/04/1438700761_871230.jpg\">\r\n<!-- \r\nhttps://tensorflow.google.cn/js/models\r\nhttp://blog.sciencenet.cn/blog-671857-567654.html\r\nhttps://www.samyzaf.com/ML/rl/qmaze.html  \r\nhttp://www.webhek.com/apps/PathFinding/\r\n-->\r\n\r\n### 【project】 AI五子棋\r\n\r\n使用CSS3开启GPU硬件加速提升网站动画渲染性能\r\n2014年03月12日 | 彬Go\r\nhttp://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html\r\n\r\n\r\n纯JS 智能五子棋 初级版 \r\nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywow.html\r\n纯JS 智能五子棋 out版 \r\nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywhv.html\r\n\r\n纯JS开发五子棋游戏，JavaScript五子棋初级版\r\nhttp://www.veryhuo.com/down/html/44497.html\r\n\r\n三三禁手\r\nhttps://zhidao.baidu.com/question/17134706.html\r\n\r\n### 【project】 翰林贴，按笔画书写汉字，带动画\r\n\r\nhttp://bishun.shufaji.com/0x963F.html\r\n\r\n### 【星图】 寻找星座的位置\r\n\r\n构建webgl版的3D找星座网站\r\n\r\n### 【音乐聚合】 各大类音乐网站资源的聚合页\r\n\r\n提供一个可以播放的界面，并展示来源网站\r\n\r\n优化推荐算法，来提升推荐的效果\r\n\r\nhttp://yuhuiyu.com/paihangbang/jingdian/\r\nhttp://www.zuiqin.com/?name=%E5%90%BB%E5%88%AB&type=netease\r\nhttp://ww1.azp2.com/mp3/\r\n",
-      "data": {
-        "title": "小项目",
-        "date": "2020-05-05 22:44:23",
-        "tags": [
-          "小项目"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "project"
-    },
-    {
-      "content": "### 【Good Code】\r\n\r\n* [DataEditH5](http://souxy.com/demo/edit.html)\r\n\r\n### 【Old Idea】\r\n* 2011年 -- 基于地理位置的LBS商户美食推荐系统\r\n* 2012年 -- 第四方物流与供应链系统（类似现在的滴滴货车和货嘀运力调度中心http://data.tf56.com/huodi.html?city=1）\r\n* 2012年 —- 知识共享系统\r\n\r\n\r\n### 【project】数据可视化配置平台\r\n基于react + dva + redux的可视化配置数据平台的前端工作流程设计方案（不断完善中）\r\n\r\n解决需求：\r\n\r\n+ 解决管理后台动态可配置\r\n\r\n+ 解决数据图表动态添加修改可配置\r\n\r\n+ 解决数据源与数据图表可配置\r\n\r\n> 落地产品：类似阿里DataV，和常见的H5制作工具，灵活且功能实用。\r\n\r\n前端流程设计：\r\nhttps://kdocs.cn/l/sKOMtserU?f=101\r\n[文档] 大数据平台构建流程.pom\r\n\r\n### 【project】打造一套完整的访客系统，从前端到后台\r\n\r\n> 应用场景：从用户端的访客预约信息提交，到信息管理，再到线下访客机的实体验证，认证反馈。从软件到硬件，用户端到现场端，解决这一问题。\r\n\r\n1. 用户角色：访客信息录入—— H5、小程序、pc web 管理端\r\n\r\n2. 访客角色：访客信息查询——H5、小程序\r\n\r\n3. 访客机：访客角色验证、访客卡领取、用户&访客（团）批处理\r\n\r\n技术实现：\r\n\r\n前端：vue + vuex + taro = H5 & 小程序； react 管理端\r\n\r\n后台：nodejs + mangoDB\r\n\r\n<!-- 访客系统   会议预定系统   场馆预订系统  圣诞晚会抽票  摇奖系统  商品选购下订单  数据展示定制化平台 -->\r\n\r\n<!-- ### 【project】赛车拉力***\r\n实现平台：微信小游戏，实时对战3v3，2v2，个人障碍赛，个人竞速赛\r\n\r\n故事一：巴音布鲁克赛道\r\n\r\n故事二：罪恶都市赛道\r\n\r\n故事伞：乡村赛道\r\n\r\n实现技术栈：JS，webscoket，webgl3D，wechat SDK，nodejs，重力场\r\n\r\n> 模型设计、技术选型可以参考 https://bruno-simon.com/  ，操控可以参考微信小游戏模式、王者荣耀、吃鸡模式\r\nhttps://greensock.com/showcase/\r\n\r\n -->\r\n\r\n### 【project】网址收藏夹\r\n类似百度网址个性页。\r\n功能列表：\r\n\r\n1、可以导入html格式的网址收藏夹\r\n\r\n2、可以手动添加、删除、修改、查询，管理已有的收藏夹地址\r\n\r\n3、可以灵活拖动网址\r\n\r\n4、每个网址会自动检测该地址是否可以打开，若可以打开，则提取该网址ico作为图标\r\n\r\n5、所见即所得的交互方式\r\n\r\n> 可参考百度网址收藏夹\r\nhttps://www.baidu.com/\r\nhttps://withpinbox.com/\r\nhttp://yijee.esgao.cn/profile\r\nchrome://bookmarks/\r\n\r\n\r\n### 【project】工作日历系统\r\n可以用来管理日常工作的录入，类似mac系统自带的日历系统和google日历\r\n\r\n常用功能：\r\n\r\n1、工作颗粒度录入，以及该工作的项目归属\r\n\r\n2、团队项目管理\r\n\r\n3、数据统计分析、报表输出\r\n\r\n3、集成工时系统\r\n\r\n> 参考google日历\r\nhttps://calendar.google.com/calendar/r \r\n\r\n> https://fullcalendar.io/  \r\n> https://ui.toast.com/tui-calendar\r\n\r\n<!-- ### 【project】 精灵盒子\r\n\r\n一种集成内置全息投影、AR效果的，正方体，大概45cm * 45cm * 45cm，里面的游戏，可以渲染成为场景，沙盘，建筑或者塔防游戏，可以给人以AR或者全息投影的真实效果，通过内置计算模块和六面投影屏幕，从外向内看到的就是很逼真的场景，用户可以通过手机app、或者游戏手柄来操作里面的人物进行任务闯关，值得实现的游戏有《纪念碑谷》、《生化危机》 -->\r\n\r\n### 【project】 手势识别、声音识别来操作窗帘\r\n\r\n用手挥动来开关窗帘。用屋内摄像头捕捉识别人体手势，传送到后台进行分析，通过机器学习、手势识别技术，分析出是哪一种手势，再传出指令调动窗帘上安装的电机执行打开或者收起的效果。\r\n> 人体手势=>摄像头=>后端计算识别手势指令=>发出开关指令=>电机转动\r\n\r\n用声音来操控窗帘。\r\n> 人体声音=>麦克风=>后端计算识别声音指令=>发出开关指令=>电机转动\r\n\r\n从前端传输到后端的以中心计算的设计模式，也可以改为终端识别即可执行指令，即将摄像模块、计算模块、控制模块集成一体到终端中，在终端中完成一系列的操作。不需要进行网络传输，保证在离线模式下也可以正常使用。在大规模识别计算场景中，将计算服务放在终端，也是一种很不错的模式，远端只需要定期对终端进行服务升级。\r\n\r\n### 【project】 AI迷宫终结者\r\n\r\n先对迷宫算法进行策略算法实现，通过Tensorflow框架进行迷宫地图的算法模型训练，让其能力演变为对任意迷宫地图都能够做到图形识别，提取迷宫模型骨骼图亦或是点阵图，达到算法能够识别进行的程度。交互方式上，从起点或者图中任意一点划出一条红线连接到终点。\r\n\r\n> 用户上传迷宫图=>迷宫模型提取=>算法计算最优路径=>绘制路线\r\n<img src=\"https://img-bbs.csdn.net/upload/201508/04/1438700761_871230.jpg\">\r\n<!-- \r\nhttps://tensorflow.google.cn/js/models\r\nhttp://blog.sciencenet.cn/blog-671857-567654.html\r\nhttps://www.samyzaf.com/ML/rl/qmaze.html  \r\nhttp://www.webhek.com/apps/PathFinding/\r\n-->\r\n\r\n### 【project】 AI五子棋\r\n\r\n使用CSS3开启GPU硬件加速提升网站动画渲染性能\r\n2014年03月12日 | 彬Go\r\nhttp://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html\r\n\r\n\r\n纯JS 智能五子棋 初级版 \r\nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywow.html\r\n纯JS 智能五子棋 out版 \r\nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywhv.html\r\n\r\n纯JS开发五子棋游戏，JavaScript五子棋初级版\r\nhttp://www.veryhuo.com/down/html/44497.html\r\n\r\n三三禁手\r\nhttps://zhidao.baidu.com/question/17134706.html\r\n\r\n### 【project】 翰林贴，按笔画书写汉字，带动画\r\n\r\nhttp://bishun.shufaji.com/0x963F.html\r\n\r\n### 【星图】 寻找星座的位置\r\n\r\n构建webgl版的3D找星座网站\r\n\r\n### 【音乐聚合】 各大类音乐网站资源的聚合页\r\n\r\n提供一个可以播放的界面，并展示来源网站\r\n\r\n优化推荐算法，来提升推荐的效果\r\n\r\nhttp://yuhuiyu.com/paihangbang/jingdian/\r\nhttp://www.zuiqin.com/?name=%E5%90%BB%E5%88%AB&type=netease\r\nhttp://ww1.azp2.com/mp3/\r\n",
-      "data": {
-        "title": "小项目",
-        "date": "2020-05-05 22:44:23",
-        "tags": [],
-        "published": true,
-        "hideInList": true,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "xiao-xiang-mu"
-    },
-    {
-      "content": "\r\n1、生成域名对应的证书\r\n\r\n2、在ng服务器中创建一个ssl的文件夹来存放证书文件和密钥文件\r\n\r\n3、修改nginx.conf配置，将ssl_certificate 和 ssl_certificate_key 分别指向对应的路径\r\n\r\n4、到ng中，nginx -t 测试是否配置成功\r\n\r\n5、重启ng，nginx -s reload，即可\r\n\r\nhttps://cloud.tencent.com/document/product/400/35244\r\n",
-      "data": {
-        "title": "Nginx 服务器安装HTTPS证书",
-        "date": "2020-05-05 22:37:32",
-        "tags": [
-          "Nginx"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "nginx-fu-wu-qi-an-zhuang-https-zheng-shu"
-    },
-    {
-      "content": "\r\n全流程走通，抓包happy\r\n可用在微信小程序的https请求中抓包\r\n移动端也有好用的抓包工具 Stream\r\n\r\nhttps://www.jianshu.com/p/933d78091d90",
-      "data": {
-        "title": "mac下使用Charles抓包",
-        "date": "2020-05-05 22:36:58",
-        "tags": [
-          "抓包"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "mac-xia-shi-yong-charles-zhua-bao"
-    },
-    {
-      "content": "\r\n通常一个页面对应一个class，而同一个class里面的form是公用同一个作用域，当需要在一个页面中操作多个不同的class时，就会遇到一些问题：\r\n比如：两个表单都调用了``validateFields`` 时，则会互相影响。``getFieldValue``、`` getFieldsValue`` 虽然可以针对不同的 ``getFieldDecorator``进行取值，但是在表单提交校验的时候，这会连带另一个form一起校验，这样不太友好。\r\n\r\n一般的处理方式，可以是使用一个页面中创建两个class，分别放置一个form，这样表单作用域就会各自进行校验。如果需要两个form需要数据交互的校验，则需要使用事件传递等方式通过组件之间通信的props传值，不是很方便；这里还可以使用高阶组件``wrappedComponentRef``来操作；\r\n\r\n```\r\nclass CustomizedForm extends React.Component { ... }\r\n\r\n// use wrappedComponentRef\r\nconst EnhancedForm =  Form.create()(CustomizedForm);\r\n<EnhancedForm wrappedComponentRef={(form) => this.form = form} />\r\nthis.form // => The instance of CustomizedForm\r\n```\r\n经过``Form.creat``包装之后的组件将会自带 ``this.props.form``属性",
-      "data": {
-        "title": "react 高阶组件的用法与一个页面处理多个表单的问题",
-        "date": "2020-05-05 22:36:24",
-        "tags": [
-          "react"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "react-gao-jie-zu-jian-de-yong-fa-yu-yi-ge-ye-mian-chu-li-duo-ge-biao-dan-de-wen-ti"
-    },
-    {
-      "content": "\r\n* 校验11位手机号码  `reg=/^[1][3,4,5,7,8][0-9]{9}$/`\r\n```javascript\r\nfunction checkPhone(val){\r\n  var reg=/^[1][3,4,5,7,8][0-9]{9}$/\r\n  if (!myreg.test($poneInput.val())) {  \r\n      return false;  \r\n  }\r\n  return true;  \r\n}\r\n```\r\n* 校验短信验证码：`/[0-9]{6}/`\r\n\r\n* 身份证校验: `/^[1-9]\\d{5}(18|19|20|(3\\d))\\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$/`",
-      "data": {
-        "title": "正则表达式常用校验规则",
-        "date": "2020-05-05 22:35:16",
-        "tags": [
-          "正则"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "zheng-ze-biao-da-shi-chang-yong-xiao-yan-gui-ze"
-    },
-    {
-      "content": "\r\n```\r\n查看进程  ps -ef|grep nginx\r\n\r\n关闭进程  kill -QUIT 或者 nginx -s stop\r\n\r\n启动服务  systemctl start nginx\r\n\r\n编辑保存 :x\t\t:wq保存退出\t\t:wq!保存强制退出\r\n\r\n删除行 Esc -- 两下d\r\n\r\nng重启 nginx -s reload，重启之前 -t 检测\r\n\r\nng检测 nginx -t，如果-t之后报错可以 nginx -c /etc/nginx/nginx.conf ，再 重启\r\n\r\n创建文件 touch xxx.xx\r\n\r\n删除文件 rm  xxx.xx   --  y\r\n\r\n打开编辑文件 vim \r\n\r\n```\r\n 更多指令：https://blog.csdn.net/jincf2011/article/details/6363301 \r\n",
-      "data": {
-        "title": "Linux常用操作",
-        "date": "2020-05-05 22:33:59",
-        "tags": [
-          "Linux"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "linux-chang-yong-cao-zuo"
-    },
-    {
-      "content": "\r\nReact处理数据时经常遇到数据是由接口请求回来，每次触发props更新都会导致重新render，如果需要的数据是需要构造出新的数据，则一般会采用 ``Array``的push方法，但是由于多次的render导致多次push导致数据重复，改为``Set()``数据类型则会自动过滤到重复的数据：\r\n\r\n**添加与删除**\r\n\r\n``Set()`` 添加数据用 `.add()`方法，删除数据用 `.delete()`\r\n> `add`方法在添加数据时一次只能添加一条数据，`Array`在push时是可以一次添加多条数据\r\n![](https://www.tuziki.com/post-images/1588689109315.png)\r\n![](https://www.tuziki.com/post-images/1588689123302.jpg)\r\n\r\n``Array`` 添加数据用 `.push()`添加数据到数组尾部。\r\n向数组的首位添加数据可以用`.unshift()`\r\n\r\n合并多个数据用`.concat()` 将一个或者多个数组进行合并成一个新的数组，注意合并数组时被合并的数组数据会自动加到新数组的后面：\r\n![](https://www.tuziki.com/post-images/1588689149697.png)\r\n\r\n`Array`在删除时，有多种办法：\r\n\r\n* `pop()` 删除数组最后一个元素并返回它\r\n* `shift()` 删除数组第一个元素并返回它\r\n* `arr[arr.length-1]` 选中数组最后一个数据\r\n* `arr.slice(-1) ` 选中指定位置的元素及它以后的所有元素并返回，-1则是倒数第一个，`arrB = arrA.slice()` 为复制数组A给B\r\n* `arr.splice(n,m)` 从第n个元素开始删除原数组中m个元素，并返回这m个元素，`arr.splice(1,arr.length)`为清空数组\r\n\r\n**清空数组**\r\n* `arr.splice(0,arr.length)` 使用splice函数\r\n* `arr.length = 0` 给数组的length赋值为0\r\n* `arr = []` 直接赋予新数组 []\r\n\r\n*效率比较：*\r\n```\r\n  let a = [];\r\n  let b = [];\r\n  let c = [];\r\n  for (let i = 0; i < 10000; i++) {\r\n    a.push(i);\r\n  }\r\n  console.time('splice');\r\n  a.splice(0, a.length);\r\n  console.timeEnd('splice');\r\n\r\n  for (let i = 0; i < 10000; i++) {\r\n    b.push(i);\r\n  }\r\n  console.time('length');\r\n  b.length = 0;\r\n  console.timeEnd('length');\r\n\r\n  for (let i = 0; i < 10000; i++) {\r\n    c.push(i);\r\n  }\r\n  console.time('赋值[]');\r\n  c = [];\r\n  console.timeEnd('赋值[]');\r\n```\r\n结果：\r\n```\r\nsplice: 1757.174072265625ms\r\nlength: 0.06396484375ms\r\n赋值[]: 0.095947265625ms\r\n```\r\n多次测试发现第二种方式最快，第三种其次，大数据量下 第一种最慢。\r\n\r\n> 数组的去重 和 排序\r\n\r\n``a = Array.from(new Set(a)).sort()`` 先去重，再排序",
-      "data": {
-        "title": "Set() 与 Array() 比较",
-        "date": "2020-05-05 22:31:23",
-        "tags": [
-          "Array"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "set-yu-array-bi-jiao"
-    },
-    {
-      "content": "\r\n> 业务场景：多种状态判断的显示执行语句，需要优化js的嵌套if语句。\r\n\r\n```JavaScript\r\n// 操作（SUBMIT = 接件；EXAMINE = 审核；SITE_CHECK = 现场核验；WAIT_DISTRIBUTE = 分发；FOLLOW = 办理；WAIT_GET = 现场领件；APPRAISE = 查看评价）\r\n\r\n  if (code === 'SUBMIT') {\r\n    code = 'default'\r\n  } else if (code === 'EXAMINE') {\r\n    code = 'processing'\r\n  } else if (code === 'SITE_CHECK') {\r\n    code = 'warning'\r\n  } else if (code === 'WAIT_DISTRIBUTE') {\r\n    code = 'warning'\r\n  } else if (code === 'FOLLOW') {\r\n    code = 'warning'\r\n  } else if (code === 'WAIT_GET') {\r\n    code = 'warning'\r\n  } else if (code === 'PASSED') {\r\n    code = 'success'\r\n  } else if (code === 'APPRAISE') {\r\n    code = 'success'\r\n  } else if (code === 'NOT_PASSED') {\r\n    code = 'error'\r\n  } else {\r\n    code = 'default'\r\n  }\r\n  return <Badge status={code} text={name} />\r\n```\r\n\r\n这里可以直接将多个 ``if... else if ...`` 语句改写为 ``switch`` ,但是这样写其实并没有太多的优化，则需要考虑更加有效率的方法，避免过多的条件检查，可以使用 ``object``\r\n\r\n```JavaScript\r\n  const codeList = {\r\n    SUBMIT: 'default',\r\n    EXAMINE: 'processing',\r\n    SITE_CHECK: 'warning',\r\n    WAIT_DISTRIBUTE: 'warning',\r\n    FOLLOW: 'warning',\r\n    WAIT_GET: 'warning',\r\n    PASSED: 'success',\r\n    APPRAISE: 'success',\r\n    NOT_PASSED: 'error'\r\n  }\r\n  code = codeList[code]\r\n  return <Badge status={code} text={name} />\r\n```",
-      "data": {
-        "title": "优化嵌套的条件判断语句",
-        "date": "2020-05-05 22:30:36",
-        "tags": [
-          "代码优化"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju"
-    },
-    {
-      "content": "```   JavaScript   \r\nrender: (text, record) =>{\r\n    let snArray = [];\r\n    snArray = text.split('+');\r\n    let br = <br/>;\r\n    let result = null;\r\n    if (snArray.length < 2) {\r\n        return text;\r\n    }\r\n    for (let i = 0; i < snArray.length; i++) {\r\n        if (i === 0) {\r\n            result = snArray[i];\r\n        } else {\r\n            result = (<span>{result}{br}{snArray[i]}</span>);\r\n        }\r\n    }\r\n    return <div>{result}</div > ;\r\n}\r\n```",
-      "data": {
-        "title": "react ant 中处理table列内容太多换行",
-        "date": "2020-05-05 22:30:03",
-        "tags": [
-          "react"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "react-ant-zhong-chu-li-table-lie-nei-rong-tai-duo-huan-xing"
-    },
-    {
-      "content": "\r\n1.1 Title 优化           \r\n首页：Tencent AI Lab 官网\r\n频道页：频道名 _ Tencent AI Lab 官网\r\n详情页：文章名1 _ 频道名 _ Tencent AI Lab 官网\r\n\r\n1.2 description 优化           \r\nDescription 为必要描述，最好是在当前页的编辑页添加对应的description，这里后台可以专门增加一个输入框，如果不输入，则后台应自动抓取文章的内容设置到这里，抓取的范围为其长度pc端大概为78个中文，移动端为50个，超过则会截断为省略号。\r\n如果当前页，没有适合做description的，则抓取网站主页的描述即可。\r\n\r\n1.3 keywords 优化           \r\nKeywords首页则为我们当前已经设置的；\r\n频道页可以做后台输入，没有设计，则为手动编辑html或者为首页keywords即可；\r\n详情页应该只能抓取文章中的关键词，没有则用户输入关键词，没有，则设为首页keywords即可；\r\n\r\n1.4 url 优化           \r\n静态化，\r\n越短越好，避免太多参数，目录层次尽量少\r\n文件及目录名具描述性，例如\r\nhttp://www.xxx.com/hk/ailab_proj/news/news-list.html 新闻频道-新闻列表\r\nhttp://www.xxx.com/hk/ailab_proj/news/news.html 新闻频道-新闻详情页\r\nhttp://www.xxx.com/hk/ailab_proj/papers/paper2.html 论文频道-论文详情页\r\nURL链接的最后，最好是加上这篇论文的标题，中文是中文标题，英文用英文标题；\r\n字母全部小写\r\n连词符使用-而不是_\r\nURL中包括关键词(中文除外)\r\n目录形式而非文件形式\r\n\r\n1.5 页面结构 优化           \r\nImg标签需要提供alt=””属性设置\r\n\r\n...\r\n(未完待续)",
-      "data": {
-        "title": "SEO优化",
-        "date": "2020-05-05 22:29:18",
-        "tags": [
-          "SEO"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "seo-you-hua"
-    },
-    {
-      "content": "网上的教程比较坑，且很老不用看了。\r\n\r\n1. 在github上构建好自己的网站，并在master分支下的Settings\r\n———— Repository name ，修改名称为 tutusiji.github.io\r\n\r\n2. 在下面的 GitHub Pages 里面设置自定义域名为 tuziki.com，并在master分支下面创建文件CNAME内容为 tuziki.com\r\n\r\n3. 到域名解析商那里修改域名解析：改 `CNAME\twww 到 tutusiji.github.io`，改  `CNAME\t * 到 tutusiji.github.io` 或者再加上 `CNAME\t@ 到 tutusiji.github.io `\r\n\r\n> 到这里域名基本可以访问，但是浏览器会提示安全限制，就是证书没有得到安全认证。去找一个可以提供免费SSL证书的域名商转接一下就好。\r\n\r\n4. Cloudflare (https://dash.cloudflare.com) 提供的免费SSL。进行下面几步操作：\r\n    1. 创建CloudFlare帐户，并添加网站\r\n    2. 输入域名、点击扫描、进入面板页面、并选择免费计划，下一步~\r\n    3. 到DNS页面设置域名解析，如图：\r\n![](https://www.tuziki.com/post-images/1588688928570.png)\r\n    4. 到Page Rules页面设置域名重定向：选择 Forwarding URL -- 301\r\n    ```\r\n    http://tuziki.com/ => https://tuziki.com\r\n    http://www.tuziki.com/ => https://tuziki.com\r\n    http://*.tuziki.com/* => https://*.tuziki.com/*\r\n    ```\r\n\r\n5. Done and Refresh.",
-      "data": {
-        "title": "个人域名绑定github并解锁https安全限制指北",
-        "date": "2020-05-05 22:28:19",
-        "tags": [],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "ge-ren-yu-ming-bang-ding-github-bing-jie-suo-https-an-quan-xian-zhi-zhi-bei"
-    },
-    {
-      "content": "\r\n> some() 会遍历数组中第一个与条件符合的并返回true\r\n\r\n```JavaScript\r\n// 1. some使用 es6新增方法，和es5的数组forEach类似\r\nvar data = [\r\n    { id: 1, name: 'wzj' },\r\n    { id: 2, name: 'zr' },\r\n    { id: 3, name: 'dxy' }\r\n];\r\n\r\n// 找出 id 为 2 的对象\r\nvar result = data.some(function (value) {\r\n    // 若没有返回值，则会一直循环遍历，类似forEach\r\n    console.log(value);\r\n\r\n    return value.id == 2;\r\n});\r\n\r\nconsole.log(result);//true\r\n\r\n```\r\n> find: 快速查找返回对象中匹配到key的item\r\n\r\n```JavaScript\r\nconst dataItem = DataObject.find(item => item.key === \"keys\")\r\n```\r\n\r\n> find: 合并两个数组中的目标值\r\n\r\n```\r\nconst listA =[{\r\n      id: 'a1',\r\n      type: 'yyy1'\r\n    },{\r\n      id: 'a2',\r\n      type: 'yyy2'\r\n    },{\r\n      id: 'a3',\r\n      type: 'yyy3'\r\n    }]\r\nconst listB =[{\r\n      id: 'a1',\r\n      name: 'xxx1'\r\n    },{\r\n      id: 'a2',\r\n      name: 'xxx2'\r\n    },{\r\n      id: 'a3',\r\n      name: 'xxx3'\r\n    }]\r\n    listA.map(i=>{\r\n      const targetItem = listB.find(item =>item.id === i.id )\r\n      i.name = targetItem.name\r\n      return listA\r\n    })\r\n\r\n    console.log( listA)\r\n```\r\n![](https://www.tuziki.com/post-images/1588688590104.png)",
-      "data": {
-        "title": "JS数组常用方法总结 some()、every()、find()、findIndex()、filter()、includes()、map()、fill()",
-        "date": "2020-05-05 22:22:22",
-        "tags": [
-          "数组"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "js-shu-zu-chang-yong-fang-fa-zong-jie-someeveryfindfindindexfilterincludesmapfill"
-    },
-    {
-      "content": "适用于业务中的时间耗时展示，处理成对应的时分秒天。主要点在于对时分秒的分开取模上面，将取到的模换算成对应的时分秒或者是进行条件区间判断，比如：一分钟以内展示秒，超过30秒显示1分钟，超过、超过一天或者1小时则不显示秒\r\n```JavaScript\r\nfunction showTime(time){\r\n    let dateTimes = ''\r\n    const ss = time\r\n    const days = Math.round(ss / (60 * 60 * 24))\r\n    const hours = Math.round((ss % (60 * 60 * 24)) / (60 * 60))\r\n    const minutes = parseInt((ss % (60 * 60)) / 60, 10)\r\n    const seconds = ss % 60\r\n    if (days > 1) {\r\n        // dateTimes = `${days}天${hours}小时${minutes}分${seconds}秒`\r\n        dateTimes = `${days}天${hours}小时${minutes}分`\r\n    } else if (hours > 1) {\r\n        dateTimes = `${hours}小时${minutes}分`\r\n    } else if (minutes > 60) {\r\n        dateTimes = `${minutes}分${seconds}秒`\r\n    } else {\r\n        dateTimes = `${seconds}秒`\r\n    }\r\n    return dateTimes\r\n}\r\n```\r\n\r\n",
-      "data": {
-        "title": "对时间格式的处理方法",
-        "date": "2020-05-05 21:36:27",
-        "tags": [
-          "js时间处理"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "dui-shi-jian-ge-shi-de-chu-li-fang-fa"
-    },
-    {
-      "content": "\r\n应用场景在于角色管理菜单树管理，这种多层`<tree>`杂糅到一起的地方，antdesign 中对`<tree>`的定义是固定的，只能渲染以这种格式：\r\n\r\n\r\n```language-javascript\r\n  {\r\n      title: '0-1',\r\n      key: '0-1',\r\n      children: [\r\n        { title: '0-1-0-0', key: '0-1-0-0' },\r\n        { title: '0-1-0-1', key: '0-1-0-1' },\r\n        { title: '0-1-0-2', key: '0-1-0-2' },\r\n      ],\r\n    }\r\n```\r\n\r\n且children的层级单一，往往后端返回的接口数据是非常多的层级，并不能立即使用。则需要对每一个层级进行单独的处理，再组合成 `<tree>` 组件所需要的格式：\r\n```JavaScript\r\n// 渲染树 第一级\r\n  renderTreeNodes = data => {\r\n    if (data) {\r\n      const render = data.map((item, index) => {\r\n        if (item.menuList) {\r\n          return (\r\n            <TreeNode title={item.moduleName} key={'0' + item.moduleId} dataRef={item}>\r\n              {this.renderTreeNodesChildren(item.menuList)}\r\n            </TreeNode>\r\n          );\r\n        }\r\n        return <TreeNode {...item} key={'0' + item.moduleId} />;\r\n      });\r\n      return render;\r\n    }\r\n  };\r\n  // 渲染树 第二级\r\n  renderTreeNodesChildren = data =>\r\n    data &&\r\n    data.map((item, index) => {\r\n      if (item.childrenMenuList) {\r\n        return (\r\n          <TreeNode title={item.menuName} key={item.menuId} dataRef={item}>\r\n            {item.childrenMenuList.length > 0\r\n              ? this.renderTreeNodesChildren(item.childrenMenuList)\r\n              : this.renderTreePermissionList(item.permissionList)}\r\n          </TreeNode>\r\n        );\r\n      }\r\n      return <TreeNode {...item} key={item.menuId} />;\r\n    });\r\n  // 渲染树 第三级\r\n  renderTreePermissionList = data => {\r\n    if (data) {\r\n      // console.log({ data });\r\n      const render = data.map(item => {\r\n        if (item) {\r\n          return <TreeNode title={item.funcName} key={item.funcId} dataRef={item} />;\r\n        }\r\n        return <TreeNode {...item} key={item.funcId} />;\r\n      });\r\n      return render;\r\n    }\r\n  };\r\n  ```\r\n而对于 `<tree>`组件中 标注已选中checkbox时，需要在 componentWillUnmount() 就请求接口数据 ` this.findList(response.moduleList) ` 处理完成之后 `this.setState({\r\nfuncIdList: []})`及时更新 `<tree>`数据：\r\n```JavaScript\r\n // 筛选递归\r\n  findList = data => {\r\n    // const { allIdList, funcIdList } = this.state;\r\n    // console.log('findList ', data);\r\n    for (let i = 0; i < data.length; i++) {\r\n      const item = data[i];\r\n      if (item.permissionList && item.permissionList.length > 0) {\r\n        item.permissionList.map((item, index) => {\r\n          allIdList.push(item.funcId);\r\n          if (Number(item.grant) === 1) {\r\n            funcIdList.push(item.funcId);\r\n          }\r\n        });\r\n      } else {\r\n        if (item.menuId) {\r\n          allIdList.push(item.menuId);\r\n        } else {\r\n          allIdList.push('0' + item.moduleId);\r\n        }\r\n      }\r\n      if (item.menuList && item.menuList.length > 0) {\r\n        item.menuList.map((item, index) => {\r\n          allIdList.push(item.menuId);\r\n        });\r\n        this.findList(item.menuList);\r\n      }\r\n      if (item.childrenMenuList && item.childrenMenuList.length > 0) {\r\n        item.childrenMenuList.map((item, index) => {\r\n          allIdList.push(item.menuId);\r\n        });\r\n        this.findList(item.childrenMenuList);\r\n      }\r\n    }\r\n    const allIdDone = Array.from(new Set(allIdList));\r\n\r\n    this.setState({\r\n      checkedKeys: funcIdList,\r\n      expandedKeys: allIdDone,\r\n      allIdList: allIdDone\r\n    });\r\n    // console.log('allIdList', allIdDone);\r\n    // console.log('funcIdList', funcIdList);\r\n  };\r\n```\r\n",
-      "data": {
-        "title": "React antdesign 渲染多层级菜单树的递归处理优化",
-        "date": "2019-06-05 22:26:35",
-        "tags": [
-          "react",
-          "递归"
-        ],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "react-antdesign-xuan-ran-duo-ceng-ji-cai-dan-shu-de-di-gui-chu-li-you-hua"
-    },
-    {
-      "content": "Mac管理员权限下发 sudo jamf -removeframework\r\n\r\n快速启动本地服务 python -m SimpleHTTPServer\r\n\r\nnpm源切换   nrm ls、nrm test、nrm use taobao、nrm add、nrm del \r\n\r\nchrome解决http自动跳转https问题 chrome://net-internals/#hsts\r\n\r\n腾讯视频文件qlv转mp4文件 ``copy/b *.tdl 1.mp4`` 保存为qlv2mp4.bat 文件，在到qlv所在目录执行\r\n",
-      "data": {
-        "title": "常用指令集",
-        "date": "2019-05-05 11:39:52",
-        "tags": [],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "chang-yong-zhi-ling-ji"
-    },
-    {
-      "content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\nweb前端开发工程师。 \n🐧🐧: 123507356\n\n### 捉虫小技\n| 项目名 | 访问地址   | 技术栈 | 备注 |\n| ----- | --------- | ------ | ------- |\n| Finder | <a href=\"http://souxy.com/map.html\" target=\"_blank\">souxy.com/map.html</a> | 腾讯地图API |已知N(N>=2)个A点坐标和距离(L>=2)，求B点坐标|\n| 加班计时器  | <a href=\"http://souxy.com/clock\" target=\"_blank\">souxy.com/clock</a>     | vue |加班倒计时工具|\n| 工作日历 | <a href=\"http://works.souxy.com\" target=\"_blank\">works.souxy.com</a>     | vue+koa+nodejs+sqlite |个人工作管理、团队管理系统|\n<!-- \n### 专业能力\n\nUI开发能力：html5、css3、less、sass、bootstrap、svg、canvas；\n\n前端构建技术：gulp、swig、webpack、svn、git\n\n框架（库）技术：vue、react、jquery、TypeScript、es567、组件化\n\n服务端技术：Nodejs、Java、SQL、<del>Python、MongoDB、MYSQL</del>\n\n多终端开发：PC、移动端、微信小程序、webapp、Hybird app、响应式设计、无障碍设计、SEO优化\n\n较好的美术设计感、UI重构、动画创意设计与开发实现能力（css3、svg、apng、canvas、webgl）；\n\n较好的金融系统业务理解能力及后端管理系统开发能力；\n\n较好的用户体验设计与开发能力；\n\n\n### 工作经历\n\n湖北百度 => 企业OA系统及网站系统开发\n\n深圳思迪 => 金融账户及业务系统开发\n\n深圳腾讯 => 互娱游戏平台 & 用户研究系统 & AI工程化建设\n\n深圳平安 => 平安小微商户平台渠道系统开发，以及和一群可爱的人为人民写代码\n\n### 我的爱好\n乒乓球、羽毛球、以及众多的小球类运动，游泳爬山可还行，种花草，撸猫撩狗，打王者吃鸡。\n -->\n\n",
-      "data": {
-        "title": "关于",
-        "date": "2019-01-25 19:09:48",
-        "tags": [],
-        "published": true,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "about"
-    },
-    {
-      "content": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... \n\n<!-- more -->\n\n[Github](https://github.com/getgridea/gridea)  \n[Gridea 主页](https://gridea.dev/)  \n[示例网站](http://fehey.com/)\n\n## 特性👇\n📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  \n\n🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  \n\n🏷️  你可以对文章进行标签分组  \n\n📋  你可以自定义菜单，甚至可以创建外部链接菜单  \n\n💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  \n\n🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  \n\n💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  \n\n🇬🇧  你可以使用**中文简体**或**英语**  \n\n🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  \n\n🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  \n\n🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃\n\n未来，它一定会成为你离不开的伙伴\n\n尽情发挥你的才华吧！\n\n😘 Enjoy~\n",
-      "data": {
-        "title": "Hello Gridea",
-        "date": "2018-12-12 00:00:00",
-        "tags": [
-          "Gridea"
-        ],
-        "published": true,
-        "hideInList": true,
-        "feature": "/post-images/hello-gridea.png",
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... ",
-      "fileName": "hello-gridea"
-    }
-  ],
-  "tags": [
-    {
-      "name": "小项目",
-      "slug": "At2AiqZw3",
-      "used": true
-    },
-    {
-      "name": "Nginx",
-      "slug": "aOqOChIeK",
-      "used": true
-    },
-    {
-      "name": "抓包",
-      "slug": "iI4BJ6jlg",
-      "used": true
-    },
-    {
-      "name": "正则",
-      "slug": "R5GbvRTcO",
-      "used": true
-    },
-    {
-      "name": "Array",
-      "slug": "QOEdciYBP",
-      "used": true
-    },
-    {
-      "name": "Linux",
-      "slug": "2duN4ViXj",
-      "used": true
-    },
-    {
-      "name": "代码优化",
-      "slug": "OJwoHNe94",
-      "used": true
-    },
-    {
-      "name": "SEO",
-      "slug": "8DvZwLPY4",
-      "used": true
-    },
-    {
-      "name": "react",
-      "slug": "8bhxgbENH",
-      "used": true
-    },
-    {
-      "name": "递归",
-      "slug": "3JETxJuGKV",
-      "used": true
-    },
-    {
-      "name": "数组",
-      "slug": "AfdhbYEZH",
-      "used": true
-    },
-    {
-      "name": "js时间处理",
-      "slug": "js-shi-jian-chu-li",
-      "used": true
-    },
-    {
-      "name": "Gridea",
-      "slug": "rTDiJ0rIZ",
-      "used": true
-    }
-  ],
-  "menus": [
-    {
-      "link": "/",
-      "name": "首页",
-      "openType": "Internal"
-    },
-    {
-      "index": 1,
-      "link": "/archives",
-      "name": "码字",
-      "openType": "Internal"
-    },
-    {
-      "link": "/tags",
-      "name": "标签",
-      "openType": "Internal"
-    },
-    {
-      "index": 3,
-      "link": "/project",
-      "name": "小项目",
-      "openType": "Internal"
-    },
-    {
-      "index": 3,
-      "link": "/about",
-      "name": "关于",
-      "openType": "Internal"
-    }
-  ]
-}
+	"posts": [
+	  {
+		"content": "一般情况下在nginx.conf文件里做以下配置改动就好\n```nginx\nhttp {\n    ##\n    # `gzip` Settings\n\n    gzip on;\n    gzip_disable \"msie6\";\n\n    gzip_vary on;\n    gzip_proxied any;\n    gzip_comp_level 6;\n    gzip_buffers 16 8k;\n    gzip_http_version 1.1;\n    gzip_min_length 256;\n    gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;\n}\n```",
+		"data": {
+		  "title": "nginx开启gzip压缩",
+		  "date": "2020-05-14 19:53:36",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "nginx-kai-qi-gzip-ya-suo"
+	  },
+	  {
+		"content": "1、CSP: Content-Security-Policy详解\r\nhttps://www.jianshu.com/p/74ea9f0860d2\r\nhttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy\r\n\r\n2、XSS\r\n3、CSRF\r\n",
+		"data": {
+		  "title": "web安全记事",
+		  "date": "2020-05-16 16:34:06",
+		  "tags": [],
+		  "published": false,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "web-an-quan-ji-shi"
+	  },
+	  {
+		"content": "尽可能的用到所见所闻的技术手段。\nDemo：<a href=\"https://www.souxy.com/demo/shizijia/\" target=\"_blank\">www.souxy.com/demo/shizijia</a>\n\n1、单纯的dom元素加css，还可以细分为定位法、浮动法\n2、css background filter 方法\n3、svg方法\n4、canvas方法\n5、vml方法\n6、伪类的content方法、伪类的拼接方法\n7、\"+\"字符方法\n8、iconfont方法\n9、base64方法\n10、background-clip方法\n",
+		"data": {
+		  "title": "前端有多少种方式实现一个十字架？",
+		  "date": "2020-05-13 02:31:12",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia"
+	  },
+	  {
+		"content": "首先，你需要一个灵关一闪的idea。\n",
+		"data": {
+		  "title": "怎样将一个idea从构思到实现",
+		  "date": "2020-05-13 02:29:41",
+		  "tags": [],
+		  "published": false,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "zen-yang-jiang-yi-ge-idea-cong-gou-si-dao-shi-xian"
+	  },
+	  {
+		"content": "### 方法一：直接定义并且初始化，这种遇到数量少的情况可以用\n``var _TheArray = [[\"0-1\",\"0-2\"],[\"1-1\",\"1-2\"],[\"2-1\",\"2-2\"]]``\n\n### 方法二：未知长度的二维数组\n```javascript\nvar tArray = new Array();  //先声明一维\nfor(var k=0;k<i;k++){    //一维长度为i,i为变量，可以根据实际情况改变\n \ntArray[k]=new Array();  //声明二维，每一个一维数组里面的一个元素都是一个数组；\n \nfor(var j=0;j<p;j++){   //一维数组里面每个元素数组可以包含的数量p，p也是一个变量；\n \ntArray[k][j]=\"\";    //这里将变量初始化，我这边统一初始化为空，后面在用所需的值覆盖里面的值\n }\n}\n给定义的数组传入所需的值\ntArray[6][1]=5；//这样就可以将5的值传入到数组中，覆盖初始化的空\n```\n### 方法三：在这之前，以上两者方法都有问题，方法二，每次定义都初始化了，虽然后面可以动态修改，但是还是不方法\n\n所以我尝试了一种动态传入值到数组的方法\n\nps:一些在实践过程中遇到的数组有趣的现象\n\n本来以为二维数组可以像下面这样直接传入值\n```javascript\nfor(var a=0;a<i;a++){\n    tArray[a]=(matArray[a],addArray[a]); //matArray[a]和addArray[a]是两个数组，这两个数组直接传入tArray[a]中\n};\n```\n结果是tArray[a]中收到的是后面一个数组的值，matArray[a]的内容被忽略的，如果换一个位置，matArray[a]在后面，则传入的是addArray[a]的值。\n\n思考：简单的例子：\n代码如下:\n```javascript\nvar a=[1,2];\nvar b=[];\nb[0]=a;//把数组a作为b数组的元素传入b数组中\nalert(b[0][1]);  //2\n```\n上面是最简单的二维数组，\n上面例子换种写法：\n代码如下:\n```javascript\nvar b=[];\nb[0]=[1,2];//把数组[1,2]作为b数组的元素传入b数组中\nalert(b[0][1]);  //2\n```\n\n可以看出上面的b[0]=[1,2]是可以用的\n代码如下:\n\n```javascript\nfor(var a=0;a<i;a++){\n    tArray[a]=[ matArray[a],addArray[a] ];  //上面例子中的（）修改为[] 就可以成功的组成一个二维数组了\n};\n总结：方法三：\n代码如下:\n```javascript\nfor(var a=0;a<i;a++){\n    tArray[a]=[ aArray[a],bArray[a],cArray[a]]; 还可以增加dArray[a],eArray[a]\n};\n```\n这种情况适用于已知几个数组，把他们组合成一个二维数组情况\n\nJS 创建多维数组\n```javascript\n  var allarray=new Array();\n  var res=\"\";\n  function loaddata()\n  {\n   for(var i=0;i<3;i++)\n {\n var starth=i*200;\n var strarw=i*200;\n var endh=(i+1)*200;\n var endw=(i+1)*200;\n allarray[i]=new Array();\n allarray[i][0]=new Array();\n allarray[i][1]=new Array();\n allarray[i][0][0]=starth;\n allarray[i][0][1]=strarw;\n  allarray[i][1][0]=endh;\n allarray[i][1][1]=endw;\n }\n  for(var i=0;i<allarray.length;i++)\n  {\n    var sh=allarray[i][0][0];\n    var sw=allarray[i][0][1]\n     var eh=allarray[i][1][0];\n    var ew=allarray[i][1][1]\n    res+=\"第\"+i+\"个坐标的开始坐标是：\"+sh+\",\"+sw+\"结束坐标是：\"+eh+\",\"+ew+\"<br/>\";\n  }\n  document.getElementById(\"dv\").innerHTML=res;\n  }\n```",
+		"data": {
+		  "title": "JavaScript -- 定义二维数组",
+		  "date": "2020-05-07 00:22:55",
+		  "tags": [
+			"Array"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "javascript-ding-yi-er-wei-shu-zu"
+	  },
+	  {
+		"content": "### 【Good Code】\n\n* [DataEditH5](http://souxy.com/demo/edit.html)\n\n### 【Old Idea】\n* 2011年 -- 基于地理位置的LBS商户美食推荐系统\n* 2012年 -- 第四方物流与供应链系统（类似现在的滴滴货车和货嘀运力调度中心http://data.tf56.com/huodi.html?city=1）\n* 2012年 —- 知识共享系统\n\n\n### 【project】数据可视化配置平台\n基于react + dva + redux的可视化配置数据平台的前端工作流程设计方案（不断完善中）\n\n解决需求：\n\n+ 解决管理后台动态可配置\n\n+ 解决数据图表动态添加修改可配置\n\n+ 解决数据源与数据图表可配置\n\n> 落地产品：类似阿里DataV，和常见的H5制作工具，灵活且功能实用。\n\n前端流程设计：\nhttps://kdocs.cn/l/sKOMtserU?f=101\n[文档] 大数据平台构建流程.pom\n\n### 【project】打造一套完整的访客系统，从前端到后台\n\n> 应用场景：从用户端的访客预约信息提交，到信息管理，再到线下访客机的实体验证，认证反馈。从软件到硬件，用户端到现场端，解决这一问题。\n\n1. 用户角色：访客信息录入—— H5、小程序、pc web 管理端\n\n2. 访客角色：访客信息查询——H5、小程序\n\n3. 访客机：访客角色验证、访客卡领取、用户&访客（团）批处理\n\n技术实现：\n\n前端：vue + vuex + taro = H5 & 小程序； react 管理端\n\n后台：nodejs + mangoDB\n\n<!-- 访客系统   会议预定系统   场馆预订系统  圣诞晚会抽票  摇奖系统  商品选购下订单  数据展示定制化平台 -->\n\n<!-- ### 【project】赛车拉力***\n实现平台：微信小游戏，实时对战3v3，2v2，个人障碍赛，个人竞速赛\n\n故事一：巴音布鲁克赛道\n\n故事二：罪恶都市赛道\n\n故事伞：乡村赛道\n\n实现技术栈：JS，webscoket，webgl3D，wechat SDK，nodejs，重力场\n\n> 模型设计、技术选型可以参考 https://bruno-simon.com/  ，操控可以参考微信小游戏模式、王者荣耀、吃鸡模式\nhttps://greensock.com/showcase/\n\n -->\n\n### 【project】网址收藏夹\n类似百度网址个性页。\n功能列表：\n\n1、可以导入html格式的网址收藏夹\n\n2、可以手动添加、删除、修改、查询，管理已有的收藏夹地址\n\n3、可以灵活拖动网址\n\n4、每个网址会自动检测该地址是否可以打开，若可以打开，则提取该网址ico作为图标\n\n5、所见即所得的交互方式\n\n> 可参考百度网址收藏夹\nhttps://www.baidu.com/\nhttps://withpinbox.com/\nhttp://yijee.esgao.cn/profile\nchrome://bookmarks/\n\n\n### 【project】工作日历系统\n可以用来管理日常工作的录入，类似mac系统自带的日历系统和google日历\n\n常用功能：\n\n1、工作颗粒度录入，以及该工作的项目归属\n\n2、团队项目管理\n\n3、数据统计分析、报表输出\n\n3、集成工时系统\n\n> 参考google日历\nhttps://calendar.google.com/calendar/r \n\n> https://fullcalendar.io/  \n> https://ui.toast.com/tui-calendar\n> https://element.eleme.cn/#/zh-CN/component/calendar\n> \n\n<!-- ### 【project】 精灵盒子\n\n一种集成内置全息投影、AR效果的，正方体，大概45cm * 45cm * 45cm，里面的游戏，可以渲染成为场景，沙盘，建筑或者塔防游戏，可以给人以AR或者全息投影的真实效果，通过内置计算模块和六面投影屏幕，从外向内看到的就是很逼真的场景，用户可以通过手机app、或者游戏手柄来操作里面的人物进行任务闯关，值得实现的游戏有《纪念碑谷》、《生化危机》 -->\n\n### 【project】 手势识别、声音识别来操作窗帘\n\n用手挥动来开关窗帘。用屋内摄像头捕捉识别人体手势，传送到后台进行分析，通过机器学习、手势识别技术，分析出是哪一种手势，再传出指令调动窗帘上安装的电机执行打开或者收起的效果。\n> 人体手势=>摄像头=>后端计算识别手势指令=>发出开关指令=>电机转动\n\n用声音来操控窗帘。\n> 人体声音=>麦克风=>后端计算识别声音指令=>发出开关指令=>电机转动\n\n从前端传输到后端的以中心计算的设计模式，也可以改为终端识别即可执行指令，即将摄像模块、计算模块、控制模块集成一体到终端中，在终端中完成一系列的操作。不需要进行网络传输，保证在离线模式下也可以正常使用。在大规模识别计算场景中，将计算服务放在终端，也是一种很不错的模式，远端只需要定期对终端进行服务升级。\n\n### 【project】 AI迷宫终结者\n\n先对迷宫算法进行策略算法实现，通过Tensorflow框架进行迷宫地图的算法模型训练，让其能力演变为对任意迷宫地图都能够做到图形识别，提取迷宫模型骨骼图亦或是点阵图，达到算法能够识别进行的程度。交互方式上，从起点或者图中任意一点划出一条红线连接到终点。\n\n> 用户上传迷宫图=>迷宫模型提取=>算法计算最优路径=>绘制路线\n<img src=\"https://img-bbs.csdn.net/upload/201508/04/1438700761_871230.jpg\">\n<!-- \nhttps://tensorflow.google.cn/js/models\nhttp://blog.sciencenet.cn/blog-671857-567654.html\nhttps://www.samyzaf.com/ML/rl/qmaze.html  \nhttp://www.webhek.com/apps/PathFinding/\n-->\n\n### 【project】 AI五子棋\n\n使用CSS3开启GPU硬件加速提升网站动画渲染性能\n2014年03月12日 | 彬Go\nhttp://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html\n\n\n纯JS 智能五子棋 初级版 \nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywow.html\n纯JS 智能五子棋 out版 \nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywhv.html\n\n纯JS开发五子棋游戏，JavaScript五子棋初级版\nhttp://www.veryhuo.com/down/html/44497.html\n\n三三禁手\nhttps://zhidao.baidu.com/question/17134706.html\n\n### 【project】 翰林贴，按笔画书写汉字，带动画\n\nhttp://bishun.shufaji.com/0x963F.html\n\n### 【星图】 寻找星座的位置\n\n构建webgl版的3D找星座网站\n\n### 【音乐聚合】 各大类音乐网站资源的聚合页\n\n提供一个可以播放的界面，并展示来源网站\n\n优化推荐算法，来提升推荐的效果\n\nhttp://yuhuiyu.com/paihangbang/jingdian/\nhttp://www.zuiqin.com/?name=%E5%90%BB%E5%88%AB&type=netease\nhttp://ww1.azp2.com/mp3/\n",
+		"data": {
+		  "title": "小项目",
+		  "date": "2020-05-05 22:44:23",
+		  "tags": [
+			"小项目"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "project"
+	  },
+	  {
+		"content": "### 【Good Code】\n\n* [DataEditH5](http://souxy.com/demo/edit.html)\n\n### 【Old Idea】\n* 2011年 -- 基于地理位置的LBS商户美食推荐系统\n* 2012年 -- 第四方物流与供应链系统（类似现在的滴滴货车和货嘀运力调度中心http://data.tf56.com/huodi.html?city=1）\n* 2012年 —- 知识共享系统\n\n\n### 【project】数据可视化配置平台\n基于react + dva + redux的可视化配置数据平台的前端工作流程设计方案（不断完善中）\n\n解决需求：\n\n+ 解决管理后台动态可配置\n\n+ 解决数据图表动态添加修改可配置\n\n+ 解决数据源与数据图表可配置\n\n> 落地产品：类似阿里DataV，和常见的H5制作工具，灵活且功能实用。\n\n前端流程设计：\nhttps://kdocs.cn/l/sKOMtserU?f=101\n[文档] 大数据平台构建流程.pom\n\n### 【project】打造一套完整的访客系统，从前端到后台\n\n> 应用场景：从用户端的访客预约信息提交，到信息管理，再到线下访客机的实体验证，认证反馈。从软件到硬件，用户端到现场端，解决这一问题。\n\n1. 用户角色：访客信息录入—— H5、小程序、pc web 管理端\n\n2. 访客角色：访客信息查询——H5、小程序\n\n3. 访客机：访客角色验证、访客卡领取、用户&访客（团）批处理\n\n技术实现：\n\n前端：vue + vuex + taro = H5 & 小程序； react 管理端\n\n后台：nodejs + mangoDB\n\n<!-- 访客系统   会议预定系统   场馆预订系统  圣诞晚会抽票  摇奖系统  商品选购下订单  数据展示定制化平台 -->\n\n<!-- ### 【project】赛车拉力***\n实现平台：微信小游戏，实时对战3v3，2v2，个人障碍赛，个人竞速赛\n\n故事一：巴音布鲁克赛道\n\n故事二：罪恶都市赛道\n\n故事伞：乡村赛道\n\n实现技术栈：JS，webscoket，webgl3D，wechat SDK，nodejs，重力场\n\n> 模型设计、技术选型可以参考 https://bruno-simon.com/  ，操控可以参考微信小游戏模式、王者荣耀、吃鸡模式\nhttps://greensock.com/showcase/\n\n -->\n\n### 【project】网址收藏夹\n类似百度网址个性页。\n功能列表：\n\n1、可以导入html格式的网址收藏夹\n\n2、可以手动添加、删除、修改、查询，管理已有的收藏夹地址\n\n3、可以灵活拖动网址\n\n4、每个网址会自动检测该地址是否可以打开，若可以打开，则提取该网址ico作为图标\n\n5、所见即所得的交互方式\n\n> 可参考百度网址收藏夹\nhttps://www.baidu.com/\nhttps://withpinbox.com/\nhttp://yijee.esgao.cn/profile\nchrome://bookmarks/\n\n\n### 【project】工作日历系统\n可以用来管理日常工作的录入，类似mac系统自带的日历系统和google日历\n\n常用功能：\n\n1、工作颗粒度录入，以及该工作的项目归属\n\n2、团队项目管理\n\n3、数据统计分析、报表输出\n\n3、集成工时系统\n\n> 参考google日历\nhttps://calendar.google.com/calendar/r \n\n> https://fullcalendar.io/  \n> https://ui.toast.com/tui-calendar\n\n<!-- ### 【project】 精灵盒子\n\n一种集成内置全息投影、AR效果的，正方体，大概45cm * 45cm * 45cm，里面的游戏，可以渲染成为场景，沙盘，建筑或者塔防游戏，可以给人以AR或者全息投影的真实效果，通过内置计算模块和六面投影屏幕，从外向内看到的就是很逼真的场景，用户可以通过手机app、或者游戏手柄来操作里面的人物进行任务闯关，值得实现的游戏有《纪念碑谷》、《生化危机》 -->\n\n### 【project】 手势识别、声音识别来操作窗帘\n\n用手挥动来开关窗帘。用屋内摄像头捕捉识别人体手势，传送到后台进行分析，通过机器学习、手势识别技术，分析出是哪一种手势，再传出指令调动窗帘上安装的电机执行打开或者收起的效果。\n> 人体手势=>摄像头=>后端计算识别手势指令=>发出开关指令=>电机转动\n\n用声音来操控窗帘。\n> 人体声音=>麦克风=>后端计算识别声音指令=>发出开关指令=>电机转动\n\n从前端传输到后端的以中心计算的设计模式，也可以改为终端识别即可执行指令，即将摄像模块、计算模块、控制模块集成一体到终端中，在终端中完成一系列的操作。不需要进行网络传输，保证在离线模式下也可以正常使用。在大规模识别计算场景中，将计算服务放在终端，也是一种很不错的模式，远端只需要定期对终端进行服务升级。\n\n### 【project】 AI迷宫终结者\n\n先对迷宫算法进行策略算法实现，通过Tensorflow框架进行迷宫地图的算法模型训练，让其能力演变为对任意迷宫地图都能够做到图形识别，提取迷宫模型骨骼图亦或是点阵图，达到算法能够识别进行的程度。交互方式上，从起点或者图中任意一点划出一条红线连接到终点。\n\n> 用户上传迷宫图=>迷宫模型提取=>算法计算最优路径=>绘制路线\n<img src=\"https://img-bbs.csdn.net/upload/201508/04/1438700761_871230.jpg\">\n<!-- \nhttps://tensorflow.google.cn/js/models\nhttp://blog.sciencenet.cn/blog-671857-567654.html\nhttps://www.samyzaf.com/ML/rl/qmaze.html  \nhttp://www.webhek.com/apps/PathFinding/\n-->\n\n### 【project】 AI五子棋\n\n使用CSS3开启GPU硬件加速提升网站动画渲染性能\n2014年03月12日 | 彬Go\nhttp://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html\n\n\n纯JS 智能五子棋 初级版 \nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywow.html\n纯JS 智能五子棋 out版 \nhttp://blog.sina.com.cn/s/blog_74d6cedd0100ywhv.html\n\n纯JS开发五子棋游戏，JavaScript五子棋初级版\nhttp://www.veryhuo.com/down/html/44497.html\n\n三三禁手\nhttps://zhidao.baidu.com/question/17134706.html\n\n### 【project】 翰林贴，按笔画书写汉字，带动画\n\nhttp://bishun.shufaji.com/0x963F.html\n\n### 【星图】 寻找星座的位置\n\n构建webgl版的3D找星座网站\n\n### 【音乐聚合】 各大类音乐网站资源的聚合页\n\n提供一个可以播放的界面，并展示来源网站\n\n优化推荐算法，来提升推荐的效果\n\nhttp://yuhuiyu.com/paihangbang/jingdian/\nhttp://www.zuiqin.com/?name=%E5%90%BB%E5%88%AB&type=netease\nhttp://ww1.azp2.com/mp3/\n",
+		"data": {
+		  "title": "小项目",
+		  "date": "2020-05-05 22:44:23",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": true,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "xiao-xiang-mu"
+	  },
+	  {
+		"content": "\n1、生成域名对应的证书\n\n2、在ng服务器中创建一个ssl的文件夹来存放证书文件和密钥文件\n\n3、修改nginx.conf配置，将ssl_certificate 和 ssl_certificate_key 分别指向对应的路径\n\n4、到ng中，nginx -t 测试是否配置成功\n\n5、重启ng，nginx -s reload，即可\n\nhttps://cloud.tencent.com/document/product/400/35244\n",
+		"data": {
+		  "title": "Nginx 服务器安装HTTPS证书",
+		  "date": "2020-05-05 22:37:32",
+		  "tags": [
+			"Nginx"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "nginx-fu-wu-qi-an-zhuang-https-zheng-shu"
+	  },
+	  {
+		"content": "\n全流程走通，抓包happy\n可用在微信小程序的https请求中抓包\n移动端也有好用的抓包工具 Stream\n\nhttps://www.jianshu.com/p/933d78091d90",
+		"data": {
+		  "title": "mac下使用Charles抓包",
+		  "date": "2020-05-05 22:36:58",
+		  "tags": [
+			"抓包"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "mac-xia-shi-yong-charles-zhua-bao"
+	  },
+	  {
+		"content": "\n通常一个页面对应一个class，而同一个class里面的form是公用同一个作用域，当需要在一个页面中操作多个不同的class时，就会遇到一些问题：\n比如：两个表单都调用了``validateFields`` 时，则会互相影响。``getFieldValue``、`` getFieldsValue`` 虽然可以针对不同的 ``getFieldDecorator``进行取值，但是在表单提交校验的时候，这会连带另一个form一起校验，这样不太友好。\n\n一般的处理方式，可以是使用一个页面中创建两个class，分别放置一个form，这样表单作用域就会各自进行校验。如果需要两个form需要数据交互的校验，则需要使用事件传递等方式通过组件之间通信的props传值，不是很方便；这里还可以使用高阶组件``wrappedComponentRef``来操作；\n\n```\nclass CustomizedForm extends React.Component { ... }\n\n// use wrappedComponentRef\nconst EnhancedForm =  Form.create()(CustomizedForm);\n<EnhancedForm wrappedComponentRef={(form) => this.form = form} />\nthis.form // => The instance of CustomizedForm\n```\n经过``Form.creat``包装之后的组件将会自带 ``this.props.form``属性",
+		"data": {
+		  "title": "react 高阶组件的用法与一个页面处理多个表单的问题",
+		  "date": "2020-05-05 22:36:24",
+		  "tags": [
+			"react"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "react-gao-jie-zu-jian-de-yong-fa-yu-yi-ge-ye-mian-chu-li-duo-ge-biao-dan-de-wen-ti"
+	  },
+	  {
+		"content": "\n* 校验11位手机号码  `reg=/^[1][3,4,5,7,8][0-9]{9}$/`\n```javascript\nfunction checkPhone(val){\n  var reg=/^[1][3,4,5,7,8][0-9]{9}$/\n  if (!myreg.test($poneInput.val())) {  \n      return false;  \n  }\n  return true;  \n}\n```\n* 校验短信验证码：`/[0-9]{6}/`\n\n* 身份证校验: `/^[1-9]\\d{5}(18|19|20|(3\\d))\\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$/`",
+		"data": {
+		  "title": "正则表达式常用校验规则",
+		  "date": "2020-05-05 22:35:16",
+		  "tags": [
+			"正则"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "zheng-ze-biao-da-shi-chang-yong-xiao-yan-gui-ze"
+	  },
+	  {
+		"content": "\n```\n查看进程  ps -ef|grep nginx\n\n关闭进程  kill -QUIT 或者 nginx -s stop\n\n启动服务  systemctl start nginx\n\n编辑保存 :x\t\t:wq保存退出\t\t:wq!保存强制退出\n\n删除行 Esc -- 两下d\n\nng重启 nginx -s reload，重启之前 -t 检测\n\nng检测 nginx -t，如果-t之后报错可以 nginx -c /etc/nginx/nginx.conf ，再 重启\n\n创建文件 touch xxx.xx\n\n删除文件 rm  xxx.xx   --  y\n\n打开编辑文件 vim \n\n```\n 更多指令：https://blog.csdn.net/jincf2011/article/details/6363301 \n",
+		"data": {
+		  "title": "Linux常用操作",
+		  "date": "2020-05-05 22:33:59",
+		  "tags": [
+			"Linux"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "linux-chang-yong-cao-zuo"
+	  },
+	  {
+		"content": "\nReact处理数据时经常遇到数据是由接口请求回来，每次触发props更新都会导致重新render，如果需要的数据是需要构造出新的数据，则一般会采用 ``Array``的push方法，但是由于多次的render导致多次push导致数据重复，改为``Set()``数据类型则会自动过滤到重复的数据：\n\n**添加与删除**\n\n``Set()`` 添加数据用 `.add()`方法，删除数据用 `.delete()`\n> `add`方法在添加数据时一次只能添加一条数据，`Array`在push时是可以一次添加多条数据\n![](https://www.tuziki.com/post-images/1588689109315.png)\n![](https://www.tuziki.com/post-images/1588689123302.jpg)\n\n``Array`` 添加数据用 `.push()`添加数据到数组尾部。\n向数组的首位添加数据可以用`.unshift()`\n\n合并多个数据用`.concat()` 将一个或者多个数组进行合并成一个新的数组，注意合并数组时被合并的数组数据会自动加到新数组的后面：\n![](https://www.tuziki.com/post-images/1588689149697.png)\n\n`Array`在删除时，有多种办法：\n\n* `pop()` 删除数组最后一个元素并返回它\n* `shift()` 删除数组第一个元素并返回它\n* `arr[arr.length-1]` 选中数组最后一个数据\n* `arr.slice(-1) ` 选中指定位置的元素及它以后的所有元素并返回，-1则是倒数第一个，`arrB = arrA.slice()` 为复制数组A给B\n* `arr.splice(n,m)` 从第n个元素开始删除原数组中m个元素，并返回这m个元素，`arr.splice(1,arr.length)`为清空数组\n\n**清空数组**\n* `arr.splice(0,arr.length)` 使用splice函数\n* `arr.length = 0` 给数组的length赋值为0\n* `arr = []` 直接赋予新数组 []\n\n*效率比较：*\n```\n  let a = [];\n  let b = [];\n  let c = [];\n  for (let i = 0; i < 10000; i++) {\n    a.push(i);\n  }\n  console.time('splice');\n  a.splice(0, a.length);\n  console.timeEnd('splice');\n\n  for (let i = 0; i < 10000; i++) {\n    b.push(i);\n  }\n  console.time('length');\n  b.length = 0;\n  console.timeEnd('length');\n\n  for (let i = 0; i < 10000; i++) {\n    c.push(i);\n  }\n  console.time('赋值[]');\n  c = [];\n  console.timeEnd('赋值[]');\n```\n结果：\n```\nsplice: 1757.174072265625ms\nlength: 0.06396484375ms\n赋值[]: 0.095947265625ms\n```\n多次测试发现第二种方式最快，第三种其次，大数据量下 第一种最慢。\n\n> 数组的去重 和 排序\n\n``a = Array.from(new Set(a)).sort()`` 先去重，再排序",
+		"data": {
+		  "title": "Set() 与 Array() 比较",
+		  "date": "2020-05-05 22:31:23",
+		  "tags": [
+			"Array"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "set-yu-array-bi-jiao"
+	  },
+	  {
+		"content": "\n> 业务场景：多种状态判断的显示执行语句，需要优化js的嵌套if语句。\n\n```JavaScript\n// 操作（SUBMIT = 接件；EXAMINE = 审核；SITE_CHECK = 现场核验；WAIT_DISTRIBUTE = 分发；FOLLOW = 办理；WAIT_GET = 现场领件；APPRAISE = 查看评价）\n\n  if (code === 'SUBMIT') {\n    code = 'default'\n  } else if (code === 'EXAMINE') {\n    code = 'processing'\n  } else if (code === 'SITE_CHECK') {\n    code = 'warning'\n  } else if (code === 'WAIT_DISTRIBUTE') {\n    code = 'warning'\n  } else if (code === 'FOLLOW') {\n    code = 'warning'\n  } else if (code === 'WAIT_GET') {\n    code = 'warning'\n  } else if (code === 'PASSED') {\n    code = 'success'\n  } else if (code === 'APPRAISE') {\n    code = 'success'\n  } else if (code === 'NOT_PASSED') {\n    code = 'error'\n  } else {\n    code = 'default'\n  }\n  return <Badge status={code} text={name} />\n```\n\n这里可以直接将多个 ``if... else if ...`` 语句改写为 ``switch`` ,但是这样写其实并没有太多的优化，则需要考虑更加有效率的方法，避免过多的条件检查，可以使用 ``object``\n\n```JavaScript\n  const codeList = {\n    SUBMIT: 'default',\n    EXAMINE: 'processing',\n    SITE_CHECK: 'warning',\n    WAIT_DISTRIBUTE: 'warning',\n    FOLLOW: 'warning',\n    WAIT_GET: 'warning',\n    PASSED: 'success',\n    APPRAISE: 'success',\n    NOT_PASSED: 'error'\n  }\n  code = codeList[code]\n  return <Badge status={code} text={name} />\n```",
+		"data": {
+		  "title": "优化嵌套的条件判断语句",
+		  "date": "2020-05-05 22:30:36",
+		  "tags": [
+			"代码优化"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju"
+	  },
+	  {
+		"content": "```   JavaScript   \nrender: (text, record) =>{\n    let snArray = [];\n    snArray = text.split('+');\n    let br = <br/>;\n    let result = null;\n    if (snArray.length < 2) {\n        return text;\n    }\n    for (let i = 0; i < snArray.length; i++) {\n        if (i === 0) {\n            result = snArray[i];\n        } else {\n            result = (<span>{result}{br}{snArray[i]}</span>);\n        }\n    }\n    return <div>{result}</div > ;\n}\n```",
+		"data": {
+		  "title": "react ant 中处理table列内容太多换行",
+		  "date": "2020-05-05 22:30:03",
+		  "tags": [
+			"react"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "react-ant-zhong-chu-li-table-lie-nei-rong-tai-duo-huan-xing"
+	  },
+	  {
+		"content": "\n1.1 Title 优化           \n首页：Tencent AI Lab 官网\n频道页：频道名 _ Tencent AI Lab 官网\n详情页：文章名1 _ 频道名 _ Tencent AI Lab 官网\n\n1.2 description 优化           \nDescription 为必要描述，最好是在当前页的编辑页添加对应的description，这里后台可以专门增加一个输入框，如果不输入，则后台应自动抓取文章的内容设置到这里，抓取的范围为其长度pc端大概为78个中文，移动端为50个，超过则会截断为省略号。\n如果当前页，没有适合做description的，则抓取网站主页的描述即可。\n\n1.3 keywords 优化           \nKeywords首页则为我们当前已经设置的；\n频道页可以做后台输入，没有设计，则为手动编辑html或者为首页keywords即可；\n详情页应该只能抓取文章中的关键词，没有则用户输入关键词，没有，则设为首页keywords即可；\n\n1.4 url 优化           \n静态化，\n越短越好，避免太多参数，目录层次尽量少\n文件及目录名具描述性，例如\nhttp://www.xxx.com/hk/ailab_proj/news/news-list.html 新闻频道-新闻列表\nhttp://www.xxx.com/hk/ailab_proj/news/news.html 新闻频道-新闻详情页\nhttp://www.xxx.com/hk/ailab_proj/papers/paper2.html 论文频道-论文详情页\nURL链接的最后，最好是加上这篇论文的标题，中文是中文标题，英文用英文标题；\n字母全部小写\n连词符使用-而不是_\nURL中包括关键词(中文除外)\n目录形式而非文件形式\n\n1.5 页面结构 优化           \nImg标签需要提供alt=””属性设置\n\n...\n(未完待续)",
+		"data": {
+		  "title": "SEO优化",
+		  "date": "2020-05-05 22:29:18",
+		  "tags": [
+			"SEO"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "seo-you-hua"
+	  },
+	  {
+		"content": "网上的教程比较坑，且很老不用看了。\n\n1. 在github上构建好自己的网站，并在master分支下的Settings\n———— Repository name ，修改名称为 tutusiji.github.io\n\n2. 在下面的 GitHub Pages 里面设置自定义域名为 tuziki.com，并在master分支下面创建文件CNAME内容为 tuziki.com\n\n3. 到域名解析商那里修改域名解析：改 `CNAME\twww 到 tutusiji.github.io`，改  `CNAME\t * 到 tutusiji.github.io` 或者再加上 `CNAME\t@ 到 tutusiji.github.io `\n\n> 到这里域名基本可以访问，但是浏览器会提示安全限制，就是证书没有得到安全认证。去找一个可以提供免费SSL证书的域名商转接一下就好。\n\n4. Cloudflare (https://dash.cloudflare.com) 提供的免费SSL。进行下面几步操作：\n    1. 创建CloudFlare帐户，并添加网站\n    2. 输入域名、点击扫描、进入面板页面、并选择免费计划，下一步~\n    3. 到DNS页面设置域名解析，如图：\n![](https://www.tuziki.com/post-images/1588688928570.png)\n    4. 到Page Rules页面设置域名重定向：选择 Forwarding URL -- 301\n    ```\n    http://tuziki.com/ => https://tuziki.com\n    http://www.tuziki.com/ => https://tuziki.com\n    http://*.tuziki.com/* => https://*.tuziki.com/*\n    ```\n\n5. Done and Refresh.",
+		"data": {
+		  "title": "个人域名绑定github并解锁https安全限制指北",
+		  "date": "2020-05-05 22:28:19",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "ge-ren-yu-ming-bang-ding-github-bing-jie-suo-https-an-quan-xian-zhi-zhi-bei"
+	  },
+	  {
+		"content": "\n> some() 会遍历数组中第一个与条件符合的并返回true\n\n```JavaScript\n// 1. some使用 es6新增方法，和es5的数组forEach类似\nvar data = [\n    { id: 1, name: 'wzj' },\n    { id: 2, name: 'zr' },\n    { id: 3, name: 'dxy' }\n];\n\n// 找出 id 为 2 的对象\nvar result = data.some(function (value) {\n    // 若没有返回值，则会一直循环遍历，类似forEach\n    console.log(value);\n\n    return value.id == 2;\n});\n\nconsole.log(result);//true\n\n```\n> find: 快速查找返回对象中匹配到key的item\n\n```JavaScript\nconst dataItem = DataObject.find(item => item.key === \"keys\")\n```\n\n> find: 合并两个数组中的目标值\n\n```\nconst listA =[{\n      id: 'a1',\n      type: 'yyy1'\n    },{\n      id: 'a2',\n      type: 'yyy2'\n    },{\n      id: 'a3',\n      type: 'yyy3'\n    }]\nconst listB =[{\n      id: 'a1',\n      name: 'xxx1'\n    },{\n      id: 'a2',\n      name: 'xxx2'\n    },{\n      id: 'a3',\n      name: 'xxx3'\n    }]\n    listA.map(i=>{\n      const targetItem = listB.find(item =>item.id === i.id )\n      i.name = targetItem.name\n      return listA\n    })\n\n    console.log( listA)\n```\n![](https://www.tuziki.com/post-images/1588688590104.png)",
+		"data": {
+		  "title": "JS数组常用方法总结 some()、every()、find()、findIndex()、filter()、includes()、map()、fill()",
+		  "date": "2020-05-05 22:22:22",
+		  "tags": [
+			"数组"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "js-shu-zu-chang-yong-fang-fa-zong-jie-someeveryfindfindindexfilterincludesmapfill"
+	  },
+	  {
+		"content": "适用于业务中的时间耗时展示，处理成对应的时分秒天。主要点在于对时分秒的分开取模上面，将取到的模换算成对应的时分秒或者是进行条件区间判断，比如：一分钟以内展示秒，超过30秒显示1分钟，超过、超过一天或者1小时则不显示秒\n```JavaScript\nfunction showTime(time){\n    let dateTimes = ''\n    const ss = time\n    const days = Math.round(ss / (60 * 60 * 24))\n    const hours = Math.round((ss % (60 * 60 * 24)) / (60 * 60))\n    const minutes = parseInt((ss % (60 * 60)) / 60, 10)\n    const seconds = ss % 60\n    if (days > 1) {\n        // dateTimes = `${days}天${hours}小时${minutes}分${seconds}秒`\n        dateTimes = `${days}天${hours}小时${minutes}分`\n    } else if (hours > 1) {\n        dateTimes = `${hours}小时${minutes}分`\n    } else if (minutes > 60) {\n        dateTimes = `${minutes}分${seconds}秒`\n    } else {\n        dateTimes = `${seconds}秒`\n    }\n    return dateTimes\n}\n```\n\n",
+		"data": {
+		  "title": "对时间格式的处理方法",
+		  "date": "2020-05-05 21:36:27",
+		  "tags": [
+			"js时间处理"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "dui-shi-jian-ge-shi-de-chu-li-fang-fa"
+	  },
+	  {
+		"content": "\n应用场景在于角色管理菜单树管理，这种多层`<tree>`杂糅到一起的地方，antdesign 中对`<tree>`的定义是固定的，只能渲染以这种格式：\n\n\n```language-javascript\n  {\n      title: '0-1',\n      key: '0-1',\n      children: [\n        { title: '0-1-0-0', key: '0-1-0-0' },\n        { title: '0-1-0-1', key: '0-1-0-1' },\n        { title: '0-1-0-2', key: '0-1-0-2' },\n      ],\n    }\n```\n\n且children的层级单一，往往后端返回的接口数据是非常多的层级，并不能立即使用。则需要对每一个层级进行单独的处理，再组合成 `<tree>` 组件所需要的格式：\n```JavaScript\n// 渲染树 第一级\n  renderTreeNodes = data => {\n    if (data) {\n      const render = data.map((item, index) => {\n        if (item.menuList) {\n          return (\n            <TreeNode title={item.moduleName} key={'0' + item.moduleId} dataRef={item}>\n              {this.renderTreeNodesChildren(item.menuList)}\n            </TreeNode>\n          );\n        }\n        return <TreeNode {...item} key={'0' + item.moduleId} />;\n      });\n      return render;\n    }\n  };\n  // 渲染树 第二级\n  renderTreeNodesChildren = data =>\n    data &&\n    data.map((item, index) => {\n      if (item.childrenMenuList) {\n        return (\n          <TreeNode title={item.menuName} key={item.menuId} dataRef={item}>\n            {item.childrenMenuList.length > 0\n              ? this.renderTreeNodesChildren(item.childrenMenuList)\n              : this.renderTreePermissionList(item.permissionList)}\n          </TreeNode>\n        );\n      }\n      return <TreeNode {...item} key={item.menuId} />;\n    });\n  // 渲染树 第三级\n  renderTreePermissionList = data => {\n    if (data) {\n      // console.log({ data });\n      const render = data.map(item => {\n        if (item) {\n          return <TreeNode title={item.funcName} key={item.funcId} dataRef={item} />;\n        }\n        return <TreeNode {...item} key={item.funcId} />;\n      });\n      return render;\n    }\n  };\n  ```\n而对于 `<tree>`组件中 标注已选中checkbox时，需要在 componentWillUnmount() 就请求接口数据 ` this.findList(response.moduleList) ` 处理完成之后 `this.setState({\nfuncIdList: []})`及时更新 `<tree>`数据：\n```JavaScript\n // 筛选递归\n  findList = data => {\n    // const { allIdList, funcIdList } = this.state;\n    // console.log('findList ', data);\n    for (let i = 0; i < data.length; i++) {\n      const item = data[i];\n      if (item.permissionList && item.permissionList.length > 0) {\n        item.permissionList.map((item, index) => {\n          allIdList.push(item.funcId);\n          if (Number(item.grant) === 1) {\n            funcIdList.push(item.funcId);\n          }\n        });\n      } else {\n        if (item.menuId) {\n          allIdList.push(item.menuId);\n        } else {\n          allIdList.push('0' + item.moduleId);\n        }\n      }\n      if (item.menuList && item.menuList.length > 0) {\n        item.menuList.map((item, index) => {\n          allIdList.push(item.menuId);\n        });\n        this.findList(item.menuList);\n      }\n      if (item.childrenMenuList && item.childrenMenuList.length > 0) {\n        item.childrenMenuList.map((item, index) => {\n          allIdList.push(item.menuId);\n        });\n        this.findList(item.childrenMenuList);\n      }\n    }\n    const allIdDone = Array.from(new Set(allIdList));\n\n    this.setState({\n      checkedKeys: funcIdList,\n      expandedKeys: allIdDone,\n      allIdList: allIdDone\n    });\n    // console.log('allIdList', allIdDone);\n    // console.log('funcIdList', funcIdList);\n  };\n```\n",
+		"data": {
+		  "title": "React antdesign 渲染多层级菜单树的递归处理优化",
+		  "date": "2019-06-05 22:26:35",
+		  "tags": [
+			"react",
+			"递归"
+		  ],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "react-antdesign-xuan-ran-duo-ceng-ji-cai-dan-shu-de-di-gui-chu-li-you-hua"
+	  },
+	  {
+		"content": "Mac管理员权限下发 sudo jamf -removeframework\n\n快速启动本地服务 python -m SimpleHTTPServer\n\nnpm源切换   nrm ls、nrm test、nrm use taobao、nrm add、nrm del \n\nchrome解决http自动跳转https问题 chrome://net-internals/#hsts\n\n腾讯视频文件qlv转mp4文件 ``copy/b *.tdl 1.mp4`` 保存为qlv2mp4.bat 文件，在到qlv所在目录执行\n",
+		"data": {
+		  "title": "常用指令集",
+		  "date": "2019-05-05 11:39:52",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "chang-yong-zhi-ling-ji"
+	  },
+	  {
+		"content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\nweb前端开发工程师。 \n🐧🐧: 123507356\n\n### 捉虫小技\n| 项目名 | 访问地址   | 技术栈 | 备注 |\n| ----- | --------- | ------ | ------- |\n| Finder | <a href=\"http://souxy.com/map.html\" target=\"_blank\">souxy.com/map.html</a> | 腾讯地图API |已知N(N>=2)个A点坐标和距离(L>=2)，求B点坐标|\n| 加班计时器  | <a href=\"http://souxy.com/clock\" target=\"_blank\">souxy.com/clock</a>     | vue |加班倒计时工具|\n| 工作日历 | <a href=\"http://works.souxy.com\" target=\"_blank\">works.souxy.com</a>     | vue+koa+nodejs+sqlite |个人工作管理、团队管理系统|\n<!-- \n### 专业能力\n\nUI开发能力：html5、css3、less、sass、bootstrap、svg、canvas；\n\n前端构建技术：gulp、swig、webpack、svn、git\n\n框架（库）技术：vue、react、jquery、TypeScript、es567、组件化\n\n服务端技术：Nodejs、Java、SQL、<del>Python、MongoDB、MYSQL</del>\n\n多终端开发：PC、移动端、微信小程序、webapp、Hybird app、响应式设计、无障碍设计、SEO优化\n\n较好的美术设计感、UI重构、动画创意设计与开发实现能力（css3、svg、apng、canvas、webgl）；\n\n较好的金融系统业务理解能力及后端管理系统开发能力；\n\n较好的用户体验设计与开发能力；\n\n\n### 工作经历\n\n湖北百度 => 企业OA系统及网站系统开发\n\n深圳思迪 => 金融账户及业务系统开发\n\n深圳腾讯 => 互娱游戏平台 & 用户研究系统 & AI工程化建设\n\n深圳平安 => 平安小微商户平台渠道系统开发，以及和一群可爱的人为人民写代码\n\n### 我的爱好\n乒乓球、羽毛球、以及众多的小球类运动，游泳爬山可还行，种花草，撸猫撩狗，打王者吃鸡。\n -->\n\n",
+		"data": {
+		  "title": "关于",
+		  "date": "2019-01-25 19:09:48",
+		  "tags": [],
+		  "published": true,
+		  "hideInList": false,
+		  "feature": null,
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "",
+		"fileName": "about"
+	  },
+	  {
+		"content": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... \n\n<!-- more -->\n\n[Github](https://github.com/getgridea/gridea)  \n[Gridea 主页](https://gridea.dev/)  \n[示例网站](http://fehey.com/)\n\n## 特性👇\n📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  \n\n🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  \n\n🏷️  你可以对文章进行标签分组  \n\n📋  你可以自定义菜单，甚至可以创建外部链接菜单  \n\n💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  \n\n🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  \n\n💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  \n\n🇬🇧  你可以使用**中文简体**或**英语**  \n\n🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  \n\n🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  \n\n🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃\n\n未来，它一定会成为你离不开的伙伴\n\n尽情发挥你的才华吧！\n\n😘 Enjoy~\n",
+		"data": {
+		  "title": "Hello Gridea",
+		  "date": "2018-12-12 00:00:00",
+		  "tags": [
+			"Gridea"
+		  ],
+		  "published": true,
+		  "hideInList": true,
+		  "feature": "/post-images/hello-gridea.png",
+		  "isTop": false
+		},
+		"isEmpty": false,
+		"excerpt": "",
+		"abstract": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... ",
+		"fileName": "hello-gridea"
+	  }
+	],
+	"tags": [
+	  {
+		"name": "小项目",
+		"slug": "At2AiqZw3",
+		"used": true
+	  },
+	  {
+		"name": "Nginx",
+		"slug": "aOqOChIeK",
+		"used": true
+	  },
+	  {
+		"name": "抓包",
+		"slug": "iI4BJ6jlg",
+		"used": true
+	  },
+	  {
+		"name": "正则",
+		"slug": "R5GbvRTcO",
+		"used": true
+	  },
+	  {
+		"name": "Array",
+		"slug": "QOEdciYBP",
+		"used": true
+	  },
+	  {
+		"name": "Linux",
+		"slug": "2duN4ViXj",
+		"used": true
+	  },
+	  {
+		"name": "代码优化",
+		"slug": "OJwoHNe94",
+		"used": true
+	  },
+	  {
+		"name": "SEO",
+		"slug": "8DvZwLPY4",
+		"used": true
+	  },
+	  {
+		"name": "react",
+		"slug": "8bhxgbENH",
+		"used": true
+	  },
+	  {
+		"name": "递归",
+		"slug": "3JETxJuGKV",
+		"used": true
+	  },
+	  {
+		"name": "数组",
+		"slug": "AfdhbYEZH",
+		"used": true
+	  },
+	  {
+		"name": "js时间处理",
+		"slug": "js-shi-jian-chu-li",
+		"used": true
+	  },
+	  {
+		"name": "Gridea",
+		"slug": "rTDiJ0rIZ",
+		"used": true
+	  }
+	],
+	"menus": [
+	  {
+		"link": "/",
+		"name": "首页",
+		"openType": "Internal"
+	  },
+	  {
+		"index": 1,
+		"link": "/archives",
+		"name": "码字",
+		"openType": "Internal"
+	  },
+	  {
+		"link": "/tags",
+		"name": "标签",
+		"openType": "Internal"
+	  },
+	  {
+		"index": 3,
+		"link": "/project",
+		"name": "小项目",
+		"openType": "Internal"
+	  },
+	  {
+		"index": 3,
+		"link": "/about",
+		"name": "关于",
+		"openType": "Internal"
+	  }
+	]
+  }
