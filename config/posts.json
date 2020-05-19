@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "content": "一、整体页面划分及架构图\r\n![](https://www.tuziki.com/post-images/1589822830450.png)\r\n\r\n前言，本项目已将【项目】与【团队】数据合并称为【归档】\r\n\r\n1、左边栏是数据源；\r\n        这里展示与当前用户所有相关联的数据，点击操作勾选多个，则可以叠加显示多个【归档】的数据在中间区域显示。\r\n        上部分为数据源操作，下部分为当前已选中的数据。\r\n\r\n2、顶部是日期切换、视图切换、功能操作，用户中心；\r\n**日期切换**：可以操作当前已选中【归档】的时间维度，【我的工作】是月视图，日期切换为月份切换；【项目归档】为月视图，日期切换为月份切换；【团队归档】是周视图，时间切换则为周切换\r\n**视图切换**：分为【我的工作】、【项目归档】、【团队归档】。``我的工作`` 展示个人**每个月**的录入数据；``项目归档``展示左侧栏已勾选的所有项目在**每个月**的录入数据；``团队归档``则是展示左侧已勾选的所有项目在**每一周**里所有项目**参与人**的录入数据\r\n**功能操作**：包括创建归档（团队归档、项目归档）、周报展示、月报展示、年报展示\r\n**用户中心**：包括用户相关信息的修改登记，头像、昵称、电话、邮箱\r\n\r\n3、中间区域是数据展示，分为月视图、周视图。\r\n",
+      "data": {
+        "title": "【工作日历】开发架构图",
+        "date": "2020-05-19 01:26:24",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "gong-zuo-ri-li-kai-fa-jia-gou-tu"
+    },
+    {
       "content": "1、CSP: Content-Security-Policy详解\r\nhttps://www.jianshu.com/p/74ea9f0860d2\r\nhttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy\r\n\r\n2、XSS\r\n3、CSRF\r\n",
       "data": {
         "title": "web安全记事",

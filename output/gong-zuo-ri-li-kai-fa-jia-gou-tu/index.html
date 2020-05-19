@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,14 +9,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="kveln">
-  <title>TUTU的个人记录</title>
+  <title>【工作日历】开发架构图 | TUTU的个人记录</title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
   <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="【工作日历】开发架构图 | TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
   <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -25,9 +25,15 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
+    <meta property="og:description" content="【工作日历】开发架构图"/>
+    <meta property="og:url" content="https://www.tuziki.com/gong-zuo-ri-li-kai-fa-jia-gou-tu/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUTU的个人记录"/>
   </head>
   <body>
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="https://www.tuziki.com">TUTU的个人记录</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,204 +77,61 @@
       </div>
     </div>
   </nav>
+  <!-- Page Header -->
   <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-10 mx-auto">
-          <div class="site-heading">
-            <!-- <h1>TUTU的个人记录</h1> -->
-            <span class="subheading">乘风破浪 负重前行</span>
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>【工作日历】开发架构图</h1>
+            <span class="meta">
+            	Posted on
+              2020-05-19，2 min read
+            </span>
           </div>
         </div>
       </div>
     </div>
   </header>
-      <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-10 mx-auto">
-       
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju/">
-            <h2 class="post-title">
-              优化嵌套的条件判断语句
-            </h2>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <p>一、整体页面划分及架构图<br>
+<img src="https://www.tuziki.com/post-images/1589822830450.png" alt="" loading="lazy"></p>
+<p>前言，本项目已将【项目】与【团队】数据合并称为【归档】</p>
+<p>1、左边栏是数据源；<br>
+这里展示与当前用户所有相关联的数据，点击操作勾选多个，则可以叠加显示多个【归档】的数据在中间区域显示。<br>
+上部分为数据源操作，下部分为当前已选中的数据。</p>
+<p>2、顶部是日期切换、视图切换、功能操作，用户中心；<br>
+<strong>日期切换</strong>：可以操作当前已选中【归档】的时间维度，【我的工作】是月视图，日期切换为月份切换；【项目归档】为月视图，日期切换为月份切换；【团队归档】是周视图，时间切换则为周切换<br>
+<strong>视图切换</strong>：分为【我的工作】、【项目归档】、【团队归档】。<code>我的工作</code> 展示个人<strong>每个月</strong>的录入数据；<code>项目归档</code>展示左侧栏已勾选的所有项目在<strong>每个月</strong>的录入数据；<code>团队归档</code>则是展示左侧已勾选的所有项目在<strong>每一周</strong>里所有项目<strong>参与人</strong>的录入数据<br>
+<strong>功能操作</strong>：包括创建归档（团队归档、项目归档）、周报展示、月报展示、年报展示<br>
+<strong>用户中心</strong>：包括用户相关信息的修改登记，头像、昵称、电话、邮箱</p>
+<p>3、中间区域是数据展示，分为月视图、周视图。</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia/">
+              <span class="post-title">
+                前端有多少种方式实现一个十字架？&rarr;
+              </span>
             </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
+          </p>
         
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/react-ant-zhong-chu-li-table-lie-nei-rong-tai-duo-huan-xing/">
-            <h2 class="post-title">
-              react ant 中处理table列内容太多换行
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
+        <div class="comment">
+          
         </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/seo-you-hua/">
-            <h2 class="post-title">
-              SEO优化
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/ge-ren-yu-ming-bang-ding-github-bing-jie-suo-https-an-quan-xian-zhi-zhi-bei/">
-            <h2 class="post-title">
-              个人域名绑定github并解锁https安全限制指北
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/js-shu-zu-chang-yong-fang-fa-zong-jie-someeveryfindfindindexfilterincludesmapfill/">
-            <h2 class="post-title">
-              JS数组常用方法总结 some()、every()、find()、findIndex()、filter()、includes()、map()、fill()
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/dui-shi-jian-ge-shi-de-chu-li-fang-fa/">
-            <h2 class="post-title">
-              对时间格式的处理方法
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/react-antdesign-xuan-ran-duo-ceng-ji-cai-dan-shu-de-di-gui-chu-li-you-hua/">
-            <h2 class="post-title">
-              React antdesign 渲染多层级菜单树的递归处理优化
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-06-05</span>
-             <span>,</span>
-             <span class="post-stats">3 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/chang-yong-zhi-ling-ji/">
-            <h2 class="post-title">
-              常用指令集
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/about/">
-            <h2 class="post-title">
-              关于
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2019-01-25</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        
-        <a class="btn btn-primary float-left" href="https://www.tuziki.com/">&larr; 上一页</a>
-        
-        
       </div>
     </div>
-  </div>
-
-  
-    <!-- Footer -->
+  </article>
+ <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
@@ -351,3 +214,4 @@
   })(this));</script>
   </body>
 </html>
+
