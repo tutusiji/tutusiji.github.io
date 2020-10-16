@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.tuziki.com</id>
     <title>TUTU的个人记录</title>
-    <updated>2020-06-23T15:16:51.701Z</updated>
+    <updated>2020-10-16T06:58:14.180Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.tuziki.com"/>
     <link rel="self" href="https://www.tuziki.com/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://www.tuziki.com/images/avatar.png</logo>
     <icon>https://www.tuziki.com/favicon.ico</icon>
     <rights>All rights reserved 2020, TUTU的个人记录</rights>
+    <entry>
+        <title type="html"><![CDATA[【算法】二维数组转树形数据结构]]></title>
+        <id>https://www.tuziki.com/suan-fa-er-wei-shu-zu-zhuan-shu-xing-shu-ju-jie-gou/</id>
+        <link href="https://www.tuziki.com/suan-fa-er-wei-shu-zu-zhuan-shu-xing-shu-ju-jie-gou/">
+        </link>
+        <updated>2020-10-16T06:25:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【算法】整数反转]]></title>
+        <id>https://www.tuziki.com/zheng-shu-fan-zhuan/</id>
+        <link href="https://www.tuziki.com/zheng-shu-fan-zhuan/">
+        </link>
+        <updated>2020-10-16T06:17:22.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【工作日历】开发架构图]]></title>
         <id>https://www.tuziki.com/gong-zuo-ri-li-kai-fa-jia-gou-tu/</id>
@@ -65,19 +79,5 @@
         <link href="https://www.tuziki.com/react-gao-jie-zu-jian-de-yong-fa-yu-yi-ge-ye-mian-chu-li-duo-ge-biao-dan-de-wen-ti/">
         </link>
         <updated>2020-05-05T14:36:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[正则表达式常用校验规则]]></title>
-        <id>https://www.tuziki.com/zheng-ze-biao-da-shi-chang-yong-xiao-yan-gui-ze/</id>
-        <link href="https://www.tuziki.com/zheng-ze-biao-da-shi-chang-yong-xiao-yan-gui-ze/">
-        </link>
-        <updated>2020-05-05T14:35:16.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux常用操作]]></title>
-        <id>https://www.tuziki.com/linux-chang-yong-cao-zuo/</id>
-        <link href="https://www.tuziki.com/linux-chang-yong-cao-zuo/">
-        </link>
-        <updated>2020-05-05T14:33:59.000Z</updated>
     </entry>
 </feed>
