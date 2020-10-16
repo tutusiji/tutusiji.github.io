@@ -15,7 +15,7 @@ web前端开发工程师。
 ### 捉虫小技
 | 项目名 | 访问地址   | 技术栈 | 备注 |
 | ----- | --------- | ------ | ------- |
-| Finder | <a href="http://souxy.com/map.html" target="_blank">souxy.com/map.html</a> | 腾讯地图API |已知N(N>=2)个A点坐标和距离(L>=2)，求B点坐标|
+| Find | <a href="http://souxy.com/map.html" target="_blank">souxy.com/map.html</a> | 腾讯地图API |已知N(N>=2)个A点坐标和距离(L>=2)，求B点坐标|
 | 加班计时器  | <a href="http://souxy.com/clock" target="_blank">souxy.com/clock</a>     | vue |加班倒计时工具|
 | 工作日历 | <a href="http://works.souxy.com" target="_blank">works.souxy.com</a>     | vue+koa+nodejs+sqlite |个人工作管理、团队管理系统|
 <!-- 
