@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,14 +9,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="kveln">
-  <title>TUTU的个人记录</title>
+  <title>vue与react生成前端二维码的QRcode组件使用 | TUTU的个人记录</title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
   <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="vue与react生成前端二维码的QRcode组件使用 | TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
   <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -25,9 +25,15 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
+    <meta property="og:description" content="vue与react生成前端二维码的QRcode组件使用"/>
+    <meta property="og:url" content="https://www.tuziki.com/vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUTU的个人记录"/>
   </head>
   <body>
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="https://www.tuziki.com">TUTU的个人记录</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,31 +77,33 @@
       </div>
     </div>
   </nav>
+  <!-- Page Header -->
   <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-10 mx-auto">
-          <div class="site-heading">
-            <!-- <h1>TUTU的个人记录</h1> -->
-            <span class="subheading">乘风破浪 负重前行</span>
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>vue与react生成前端二维码的QRcode组件使用</h1>
+            <span class="meta">
+            	Posted on
+              2020-12-10，1 min read
+            </span>
           </div>
         </div>
       </div>
     </div>
   </header>
-      <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-10 mx-auto">
-       
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong/">
-            <h2 class="post-title">
-              vue与react生成前端二维码的QRcode组件使用
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              <h2 id="vue版本">VUE版本：</h2>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <h2 id="vue版本">VUE版本：</h2>
 <h3 id="安装">安装:</h3>
 <pre><code class="language-html">npm install qrcode
 
@@ -125,210 +133,47 @@ useqrcode(url) {
 }
 
 </code></pre>
+<!-- more -->
+<h2 id="react版本">React版本：</h2>
+<h3 id="安装-2">安装:</h3>
+<pre><code class="language-html">npm install qrcode
 
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-12-10</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/vue-zhong-watch-he-computed-de-qu-bie-xiang-jie/">
-            <h2 class="post-title">
-              VUE中watch 和 computed的区别详解
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              <p><code>watch</code>: 监视,能够监听到数据的变化,只要数据变化的时候,都会自定执行对应的方法,其中可以检测的数据来源分为三部分 data , computed , props</p>
-<h3 id="侦听属性watch">侦听属性watch：</h3>
-<blockquote></blockquote>
-<ul>
-<li>不支持缓存，数据变，直接会触发相应的操作</li>
-<li>watch支持异步</li>
-<li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值</li>
-<li>当一个属性发生变化时，需要执行对应的操作；一对多</li>
-<li>监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数：</li>
-</ul>
-<blockquote></blockquote>
+import QRCode from 'qrcode.react'
+</code></pre>
+<h3 id="dom-2">DOM:</h3>
+<pre><code class="language-javascript">{this.renderCanvas(url)}
+</code></pre>
+<h3 id="渲染">渲染:</h3>
+<pre><code class="language-javascript">renderCanvas = url =&gt; {
+    return (
+        &lt;div style={{ width: '200px'}}&gt;
+            &lt;p style={{ wordBreak: 'break-all' }}&gt;{url}&lt;/p&gt;
+            &lt;QRCode
+                value={url} //value参数为生成二维码的链接
+                size={200} //二维码的宽高尺寸
+                fgColor=&quot;#000000&quot; //二维码的颜色
+            /&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
 
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-12-09</span>
-             <span>,</span>
-             <span class="post-stats">3 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/suan-fa-er-wei-shu-zu-zhuan-shu-xing-shu-ju-jie-gou/">
-            <h2 class="post-title">
-              【算法】二维数组转树形数据结构
-            </h2>
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/vue-zhong-watch-he-computed-de-qu-bie-xiang-jie/">
+              <span class="post-title">
+                VUE中watch 和 computed的区别详解&rarr;
+              </span>
             </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-10-16</span>
-             <span>,</span>
-             <span class="post-stats">4 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
+          </p>
         
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/zheng-shu-fan-zhuan/">
-            <h2 class="post-title">
-              【算法】整数反转
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-10-16</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
+        <div class="comment">
+          
         </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/gong-zuo-ri-li-kai-fa-jia-gou-tu/">
-            <h2 class="post-title">
-              【工作日历】开发架构图
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-19</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/nginx-kai-qi-gzip-ya-suo/">
-            <h2 class="post-title">
-              nginx开启gzip压缩
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-14</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia/">
-            <h2 class="post-title">
-              前端有多少种方式实现一个十字架？
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-13</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/javascript-ding-yi-er-wei-shu-zu/">
-            <h2 class="post-title">
-              JavaScript -- 定义二维数组
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-07</span>
-             <span>,</span>
-             <span class="post-stats">4 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/project/">
-            <h2 class="post-title">
-              小项目
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">5 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/nginx-fu-wu-qi-an-zhuang-https-zheng-shu/">
-            <h2 class="post-title">
-              Nginx 服务器安装HTTPS证书
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        
-        
-        <a class="btn btn-primary float-right" href="https://www.tuziki.com/page/2">下一页 &rarr;</a>
-        
       </div>
     </div>
-  </div>
-
-  
-    <!-- Footer -->
+  </article>
+ <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
@@ -411,3 +256,4 @@ useqrcode(url) {
   })(this));</script>
   </body>
 </html>
+
