@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,14 +9,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="kveln">
-  <title>TUTU的个人记录</title>
+  <title>vuex中store运用require.context改造为便捷的管理状态器 | TUTU的个人记录</title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
   <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="vuex中store运用require.context改造为便捷的管理状态器 | TUTU的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
   <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -25,9 +25,15 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
+    <meta property="og:description" content="vuex中store运用require.context改造为便捷的管理状态器"/>
+    <meta property="og:url" content="https://www.tuziki.com/vuex-zhong-store-yun-yong-requirecontext-gai-zao-wei-bian-jie-de-guan-li-zhuang-tai-qi/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUTU的个人记录"/>
   </head>
   <body>
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="https://www.tuziki.com">TUTU的个人记录</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,225 +77,158 @@
       </div>
     </div>
   </nav>
+  <!-- Page Header -->
   <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-10 mx-auto">
-          <div class="site-heading">
-            <!-- <h1>TUTU的个人记录</h1> -->
-            <span class="subheading">乘风破浪 负重前行</span>
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>vuex中store运用require.context改造为便捷的管理状态器</h1>
+            <span class="meta">
+            	Posted on
+              2020-12-11，2 min read
+            </span>
           </div>
         </div>
       </div>
     </div>
   </header>
-      <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-10 mx-auto">
-       
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/nginx-fu-wu-qi-an-zhuang-https-zheng-shu/">
-            <h2 class="post-title">
-              Nginx 服务器安装HTTPS证书
-            </h2>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <h2 id="vuexvue状态管理模式">VueX（Vue状态管理模式)</h2>
+<h3 id="vuex-的核心成员列表">Vuex 的核心成员列表：</h3>
+<ul>
+<li>state 存放状态</li>
+<li>mutations state成员操作</li>
+<li>getters 加工state成员给外界</li>
+<li>actions 异步操作</li>
+<li>modules 模块化状态管理</li>
+</ul>
+<p>正常情况下，我们需要在state里面定义需要操作的对象，并赋值，再调取 getter、和 mutations的setter方法来操作数据，定义比较繁琐</p>
+<pre><code class="language-javascript">import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+	state: {
+		addAppealForm: {
+			enterpriseAppealNotice: false,
+			showPicker: false,
+			appealType: ''
+		},
+		signinForm: {
+			enterpriseName: '',
+			userName: '',
+			loginPassword: '',
+			contactName: ''
+		}
+	},
+	getters: {
+		getAddAppeal(state) {
+			return state.addAppealForm
+		},
+		getSigninForm(state) {
+			return state.signinForm
+		}
+	},
+	mutations: {
+		setAddAppeal(state, params) {
+			state.addAppealForm = params
+		},
+		setSigninForm(state, params) {
+			state.signinForm = params
+		}
+	}
+})
+
+export default store
+
+</code></pre>
+<p>实际业务中写如此多的构建语法会比较繁琐，将模块与vuex所需操作的数据进行剥离，做到类似localStorage的键值对方式存取会更加的方便，这里要用到webpack的api，require.context函数，获取一个特定的上下文，实现自动化导入模块，使得不需要每次显式的调用import导入模块</p>
+<pre><code class="language-javascript">// ./modules/index.js
+const files = require.context('.', false, /\.js$/)
+const modules = {}
+
+files.keys().forEach((key) =&gt; {
+	if (key === './index.js') return
+	modules[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
+})
+
+export default modules
+
+</code></pre>
+<pre><code class="language-javascript">// index.js
+import Vue from 'vue'
+import Vuex from 'vuex'
+import modules from './modules'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+	modules
+})
+
+export default store
+
+</code></pre>
+<p>从而，在实际的业务需求vuex定义的模块中，动态键值对的设计则是通过Object.keys() 调用<code>Vue.delete(state, key)</code>  和  <code>Vue.set(state, key, data[key])</code> 来实现</p>
+<pre><code class="language-javascript">// process.js
+
+import Vue from 'vue'
+
+export default {
+	state: null,
+	mutations: {
+		updateProcessInfo(state, data) {
+			if (data === null) {
+				Object.keys(state).forEach((key) =&gt; {
+					Vue.delete(state, key)
+				})
+			} else {
+				Object.keys(data).forEach((key) =&gt; {
+					Vue.set(state, key, data[key])
+				})
+			}
+		}
+	},
+	actions: {}
+}
+
+</code></pre>
+<p>页面调用：</p>
+<pre><code class="language-javascript">// 存入
+this.$store.commit('updateProcessInfo', {processDetail: data})
+
+// 读取
+this.$store.state.process.processDetail
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://www.tuziki.com/post-images/1607692443097.png" alt="" loading="lazy"></figure>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong/">
+              <span class="post-title">
+                vue与react生成前端二维码的QRcode组件使用&rarr;
+              </span>
             </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
+          </p>
         
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/mac-xia-shi-yong-charles-zhua-bao/">
-            <h2 class="post-title">
-              mac下使用Charles抓包
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
+        <div class="comment">
+          
         </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/react-gao-jie-zu-jian-de-yong-fa-yu-yi-ge-ye-mian-chu-li-duo-ge-biao-dan-de-wen-ti/">
-            <h2 class="post-title">
-              react 高阶组件的用法与一个页面处理多个表单的问题
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/zheng-ze-biao-da-shi-chang-yong-xiao-yan-gui-ze/">
-            <h2 class="post-title">
-              正则表达式常用校验规则
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/linux-chang-yong-cao-zuo/">
-            <h2 class="post-title">
-              Linux常用操作
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/set-yu-array-bi-jiao/">
-            <h2 class="post-title">
-              Set() 与 Array() 比较
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">3 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/you-hua-qian-tao-de-tiao-jian-pan-duan-yu-ju/">
-            <h2 class="post-title">
-              优化嵌套的条件判断语句
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/react-ant-zhong-chu-li-table-lie-nei-rong-tai-duo-huan-xing/">
-            <h2 class="post-title">
-              react ant 中处理table列内容太多换行
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">1 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/seo-you-hua/">
-            <h2 class="post-title">
-              SEO优化
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        <div class="post-preview">
-          <a href="https://www.tuziki.com/ge-ren-yu-ming-bang-ding-github-bing-jie-suo-https-an-quan-xian-zhi-zhi-bei/">
-            <h2 class="post-title">
-              个人域名绑定github并解锁https安全限制指北
-            </h2>
-            </a>
-            <h3 class="post-subtitle">
-              
-            </h3>
-          <p class="post-meta">
-             <span class="time">2020-05-05</span>
-             <span>,</span>
-             <span class="post-stats">2 min read</span>
-            </p>
-        </div>
-        <hr>
-        <div class="clearfix">
-        </div>
-        
-        
-        <a class="btn btn-primary float-left" href="https://www.tuziki.com/">&larr; 上一页</a>
-        
-        
-        <a class="btn btn-primary float-right" href="https://www.tuziki.com/page/3/">下一页 &rarr;</a>
-        
       </div>
     </div>
-  </div>
-
-  
-    <!-- Footer -->
+  </article>
+ <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
@@ -372,3 +311,4 @@
   })(this));</script>
   </body>
 </html>
+

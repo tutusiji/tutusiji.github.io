@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "content": "## VueX（Vue状态管理模式)\n\n### Vuex 的核心成员列表：\n- state 存放状态\n- mutations state成员操作\n- getters 加工state成员给外界\n- actions 异步操作\n- modules 模块化状态管理\n\n正常情况下，我们需要在state里面定义需要操作的对象，并赋值，再调取 getter、和 mutations的setter方法来操作数据，定义比较繁琐\n```javascript\nimport Vue from 'vue'\nimport Vuex from 'vuex'\n\nVue.use(Vuex)\n\nconst store = new Vuex.Store({\n\tstate: {\n\t\taddAppealForm: {\n\t\t\tenterpriseAppealNotice: false,\n\t\t\tshowPicker: false,\n\t\t\tappealType: ''\n\t\t},\n\t\tsigninForm: {\n\t\t\tenterpriseName: '',\n\t\t\tuserName: '',\n\t\t\tloginPassword: '',\n\t\t\tcontactName: ''\n\t\t}\n\t},\n\tgetters: {\n\t\tgetAddAppeal(state) {\n\t\t\treturn state.addAppealForm\n\t\t},\n\t\tgetSigninForm(state) {\n\t\t\treturn state.signinForm\n\t\t}\n\t},\n\tmutations: {\n\t\tsetAddAppeal(state, params) {\n\t\t\tstate.addAppealForm = params\n\t\t},\n\t\tsetSigninForm(state, params) {\n\t\t\tstate.signinForm = params\n\t\t}\n\t}\n})\n\nexport default store\n\n```\n实际业务中写如此多的构建语法会比较繁琐，将模块与vuex所需操作的数据进行剥离，做到类似localStorage的键值对方式存取会更加的方便，这里要用到webpack的api，require.context函数，获取一个特定的上下文，实现自动化导入模块，使得不需要每次显式的调用import导入模块\n```javascript\n// ./modules/index.js\nconst files = require.context('.', false, /\\.js$/)\nconst modules = {}\n\nfiles.keys().forEach((key) => {\n\tif (key === './index.js') return\n\tmodules[key.replace(/(\\.\\/|\\.js)/g, '')] = files(key).default\n})\n\nexport default modules\n\n```\n```javascript\n// index.js\nimport Vue from 'vue'\nimport Vuex from 'vuex'\nimport modules from './modules'\n\nVue.use(Vuex)\n\nconst store = new Vuex.Store({\n\tmodules\n})\n\nexport default store\n\n```\n从而，在实际的业务需求vuex定义的模块中，动态键值对的设计则是通过Object.keys() 调用``Vue.delete(state, key)``  和  ``Vue.set(state, key, data[key])`` 来实现\n```javascript\n// process.js\n\nimport Vue from 'vue'\n\nexport default {\n\tstate: null,\n\tmutations: {\n\t\tupdateProcessInfo(state, data) {\n\t\t\tif (data === null) {\n\t\t\t\tObject.keys(state).forEach((key) => {\n\t\t\t\t\tVue.delete(state, key)\n\t\t\t\t})\n\t\t\t} else {\n\t\t\t\tObject.keys(data).forEach((key) => {\n\t\t\t\t\tVue.set(state, key, data[key])\n\t\t\t\t})\n\t\t\t}\n\t\t}\n\t},\n\tactions: {}\n}\n\n```\n页面调用：\n```javascript\n// 存入\nthis.$store.commit('updateProcessInfo', {processDetail: data})\n\n// 读取\nthis.$store.state.process.processDetail\n```\n![](https://www.tuziki.com/post-images/1607692443097.png)\n\n\n",
+      "data": {
+        "title": "vuex中store运用require.context改造为便捷的管理状态器",
+        "date": "2020-12-11 11:21:45",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "vuex-zhong-store-yun-yong-requirecontext-gai-zao-wei-bian-jie-de-guan-li-zhuang-tai-qi"
+    },
+    {
       "content": "## VUE版本：\n\n### 安装:\n``` html\nnpm install qrcode\n\nimport QRCode from 'qrcode'\n```\n\n### DOM:\n``` html\n<canvas id=\"canvas\"></canvas>\n```\n### 页面调用\n``` javascript\nthis.useqrcode('http://www.baidu.com')\n\nuseqrcode(url) {\n    const canvas = document.getElementById('canvas')\n    QRCode.toCanvas(\n        canvas,\n        url,\n        {\n            scale: 5.0,\n            height: 180,\n            wight: 180\n        },\n        error => {\n            if (error) console.error(error)\n            console.log('success!')\n        }\n    )\n}\n\n```\n\n<!-- more -->\n## React版本：\n### 安装:\n``` html\nnpm install qrcode\n\nimport QRCode from 'qrcode.react'\n```\n### DOM:\n``` javascript\n{this.renderCanvas(url)}\n```\n### 渲染:\n``` javascript\nrenderCanvas = url => {\n    return (\n        <div style={{ width: '200px'}}>\n            <p style={{ wordBreak: 'break-all' }}>{url}</p>\n            <QRCode\n                value={url} //value参数为生成二维码的链接\n                size={200} //二维码的宽高尺寸\n                fgColor=\"#000000\" //二维码的颜色\n            />\n        </div>\n    )\n}\n```",
       "data": {
         "title": "vue与react生成前端二维码的QRcode组件使用",
@@ -15,22 +31,6 @@
       "excerpt": "",
       "abstract": "## VUE版本：\n\n### 安装:\n``` html\nnpm install qrcode\n\nimport QRCode from 'qrcode'\n```\n\n### DOM:\n``` html\n<canvas id=\"canvas\"></canvas>\n```\n### 页面调用\n``` javascript\nthis.useqrcode('http://www.baidu.com')\n\nuseqrcode(url) {\n    const canvas = document.getElementById('canvas')\n    QRCode.toCanvas(\n        canvas,\n        url,\n        {\n            scale: 5.0,\n            height: 180,\n            wight: 180\n        },\n        error => {\n            if (error) console.error(error)\n            console.log('success!')\n        }\n    )\n}\n\n```",
       "fileName": "vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong"
-    },
-    {
-      "content": "## VUE版本：\n",
-      "data": {
-        "title": "vue与react生成前端二维码的QRcode组件",
-        "date": "2020-12-10 15:14:04",
-        "tags": [],
-        "published": false,
-        "hideInList": false,
-        "feature": null,
-        "isTop": false
-      },
-      "isEmpty": false,
-      "excerpt": "",
-      "abstract": "",
-      "fileName": "vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian"
     },
     {
       "content": "``watch``: 监视,能够监听到数据的变化,只要数据变化的时候,都会自定执行对应的方法,其中可以检测的数据来源分为三部分 data , computed , props\n### 侦听属性watch：\n>\n+ 不支持缓存，数据变，直接会触发相应的操作\n+ watch支持异步\n+ 监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值\n+ 当一个属性发生变化时，需要执行对应的操作；一对多\n+ 监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数：\n>\n\n<!-- more -->\n\n``computed``:  计算属性,存在一个计算缓存的特性,每一次计算之后,只要里面的逻辑不发生变化,每一次重复调用,都会使用上一次执行的结果,能够节省计算的时间\n当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch,通常更好的是使用 computed 属性而不是命令式的 watch 回调\n\n### 计算属性computed：\n> \n- 支持缓存，只有依赖数据发生改变，才会重新进行计算\n- 不支持异步，当computed内有异步操作时无效，无法监听数据的变化\n- computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于data中声明过或者父组件传递的props中的数据通过计算得到的值\n如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用 computed\n如果computed 属性属性值是函数，那么默认会走get方法；函数的返回值就是属性的属性值；在computed中的，属性都有一个get和一个set方法，当数据变化时，调用set方法。\n\nimmediate：组件加载立即触发回调函数执行\n``` javascript\nwatch: {\n  firstName: {\n    handler(newName, oldName) {\n      this.fullName = newName + ' ' + this.lastName;\n    },\n    // 代表在wacth里声明了firstName这个方法之后立即执行handler方法\n    immediate: true\n  }\n}\n```\ndeep: deep的意思就是深入观察，监听器会一层层的往下遍历，给对象的所有属性都加上这个监听器，但是这样性能开销就会非常大了，任何修改obj里面任何一个属性都会触发这个监听器里的 handler\n```javascript\nwatch: {\n  obj: {\n    handler(newName, oldName) {\n      console.log('obj.a changed');\n    },\n    immediate: true,\n    deep: true\n  }\n}\n```\n优化：我们可以使用字符串的形式监听\n```javascript\nwatch: {\n  'obj.a': {\n    handler(newName, oldName) {\n      console.log('obj.a changed');\n    },\n    immediate: true,\n    // deep: true\n  }\n}\n```\n这样Vue.js才会一层一层解析下去，直到遇到属性a，然后才给a设置监听函数。\n\n\n\n\n\n\n",
