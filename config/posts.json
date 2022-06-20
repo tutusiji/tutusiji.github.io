@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "content": "MacOS 安装：\nhttps://www.jianshu.com/p/dfb10517d409/\n\nwindows安装：\nhttps://www.runoob.com/mongodb/mongodb-window-install.html\n",
+      "data": {
+        "title": "mongodb安装",
+        "date": "2022-06-20 18:33:36",
+        "tags": [
+          "mongodb"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "mongodb-an-zhuang"
+    },
+    {
       "content": "## VueX（Vue状态管理模式)\n\n### Vuex 的核心成员列表：\n- state 存放状态\n- mutations state成员操作\n- getters 加工state成员给外界\n- actions 异步操作\n- modules 模块化状态管理\n\n正常情况下，我们需要在state里面定义需要操作的对象，并赋值，再调取 getter、和 mutations的setter方法来操作数据，定义比较繁琐\n```javascript\nimport Vue from 'vue'\nimport Vuex from 'vuex'\n\nVue.use(Vuex)\n\nconst store = new Vuex.Store({\n\tstate: {\n\t\taddAppealForm: {\n\t\t\tenterpriseAppealNotice: false,\n\t\t\tshowPicker: false,\n\t\t\tappealType: ''\n\t\t},\n\t\tsigninForm: {\n\t\t\tenterpriseName: '',\n\t\t\tuserName: '',\n\t\t\tloginPassword: '',\n\t\t\tcontactName: ''\n\t\t}\n\t},\n\tgetters: {\n\t\tgetAddAppeal(state) {\n\t\t\treturn state.addAppealForm\n\t\t},\n\t\tgetSigninForm(state) {\n\t\t\treturn state.signinForm\n\t\t}\n\t},\n\tmutations: {\n\t\tsetAddAppeal(state, params) {\n\t\t\tstate.addAppealForm = params\n\t\t},\n\t\tsetSigninForm(state, params) {\n\t\t\tstate.signinForm = params\n\t\t}\n\t}\n})\n\nexport default store\n\n```\n实际业务中写如此多的构建语法会比较繁琐，将模块与vuex所需操作的数据进行剥离，做到类似localStorage的键值对方式存取会更加的方便，这里要用到webpack的api，require.context函数，获取一个特定的上下文，实现自动化导入模块，使得不需要每次显式的调用import导入模块\n```javascript\n// ./modules/index.js\nconst files = require.context('.', false, /\\.js$/)\nconst modules = {}\n\nfiles.keys().forEach((key) => {\n\tif (key === './index.js') return\n\tmodules[key.replace(/(\\.\\/|\\.js)/g, '')] = files(key).default\n})\n\nexport default modules\n\n```\n```javascript\n// index.js\nimport Vue from 'vue'\nimport Vuex from 'vuex'\nimport modules from './modules'\n\nVue.use(Vuex)\n\nconst store = new Vuex.Store({\n\tmodules\n})\n\nexport default store\n\n```\n从而，在实际的业务需求vuex定义的模块中，动态键值对的设计则是通过Object.keys() 调用``Vue.delete(state, key)``  和  ``Vue.set(state, key, data[key])`` 来实现\n```javascript\n// process.js\n\nimport Vue from 'vue'\n\nexport default {\n\tstate: null,\n\tmutations: {\n\t\tupdateProcessInfo(state, data) {\n\t\t\tif (data === null) {\n\t\t\t\tObject.keys(state).forEach((key) => {\n\t\t\t\t\tVue.delete(state, key)\n\t\t\t\t})\n\t\t\t} else {\n\t\t\t\tObject.keys(data).forEach((key) => {\n\t\t\t\t\tVue.set(state, key, data[key])\n\t\t\t\t})\n\t\t\t}\n\t\t}\n\t},\n\tactions: {}\n}\n\n```\n页面调用：\n```javascript\n// 存入\nthis.$store.commit('updateProcessInfo', {processDetail: data})\n\n// 读取\nthis.$store.state.process.processDetail\n```\n![](https://www.tuziki.com/post-images/1607692443097.png)\n\n\n",
       "data": {
         "title": "vuex中store运用require.context改造为便捷的管理状态器",
@@ -501,6 +519,11 @@
     }
   ],
   "tags": [
+    {
+      "name": "mongodb",
+      "slug": "MGpi3VOtt",
+      "used": true
+    },
     {
       "name": "算法",
       "slug": "pE2yIQ8qr",
