@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>微信中h5页面跳转微信小程序注意事项 | TUZIKI的个人记录</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="微信中h5页面跳转微信小程序注意事项 | TUZIKI的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MJVLDZBD"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-K8MJVLDZBD');</script>
+  
+
+    <meta property="og:description" content="微信中h5页面跳转微信小程序注意事项"/>
+    <meta property="og:url" content="https://www.tuziki.com/wei-xin-zhong-h5-ye-mian-tiao-zhuan-wei-xin-xiao-cheng-xu-zhu-yi-shi-xiang/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUZIKI的个人记录"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.tuziki.com">TUZIKI的个人记录</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">码字</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/project">小项目</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>微信中h5页面跳转微信小程序注意事项</h1>
+            <span class="meta">
+            	Posted on
+              2023-05-07，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <h2 id="具体操作可以看官方文档"><strong>具体操作可以看官方文档</strong></h2>
+<p>https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html</p>
+<h2 id="下面主要总结一些过程中可能遇到的问题"><strong>下面主要总结一些过程中可能遇到的问题:</strong></h2>
+<ol>
+<li>域名是https并且备案</li>
+<li>公众号JS安全域名里面有登记你的前端域名,https://mp.weixin.qq.com/</li>
+<li>ip白名单列表里面有登记服务器出口外网IP地址</li>
+<li>公众号必须是服务号,订阅号不可以用,非个人主体的</li>
+<li>遇到VUE报错 <wx-open-launch-weapp> 未定义,需要新增这个标签,在main.js中添加 Vue.config.ignoredElements.push('wx-open-launch-weapp')  ,如果使用了 Vue.config.ignoredElements=['wx-open-launch-weapp'] 会覆盖所有自定义标签,不可用</li>
+<li>微信开发者工具和真机都可以显示出按钮的,chrome浏览器不行</li>
+<li>后台接口已经完成签名校验,并返回正确的值,注意前后端使用的appid必须是同一个</li>
+<li>JSSDK要使用高版本的,https://res2.wx.qq.com/open/js/jweixin-1.6.0.js</li>
+<li>确认config中nonceStr（js中驼峰标准大写S）, timestamp与用以签名中的对应noncestr, timestamp一致</li>
+<li>最好开启wx.config的debug模式,方便调试</li>
+<li>jsApiList:['chooseImage', 'previewImage']（必须有，不然安卓不显示）</li>
+<li>微信版本要求为：7.0.12及以上。 系统版本要求为：iOS 10.3及以上、Android 5.0及以上</li>
+<li>wx.config中的配置项必填的一定是必填的</li>
+<li>不能用js来模拟点击，有局限性</li>
+<li>样式无法写在外面中，只能在script标签内内链写或者行内样式</li>
+<li>无论是内链还是行内 都不支持rem</li>
+<li>不会继承样式</li>
+<li>如果开发标签内需要使用图片，不能用本地图片，得用外网可以访问的图片，要不然会不显示</li>
+<li>path是需要跳转的微信小程序的路径，需要在路径后边添加.html。否则跳转不过去</li>
+<li>html 页面可以用 <template></template> 标签包裹，Vue 页面要改用 <script type="text/wxtag-template"></script> 包裹</li>
+<li>后端的加密方法是 hex_sha1</li>
+<li>username是需要跳转小程序的原始id，以gh_开头</li>
+</ol>
+<pre><code class="language-javascript">&lt;template&gt;
+    &lt;div class=&quot;home-wrap&quot;&gt;
+        &lt;div class=&quot;top&quot;&gt;
+            目标ID: {{ this.id }} &lt;br /&gt;&lt;br /&gt;
+            目标路径: {{ this.url }}
+        &lt;/div&gt;
+        &lt;div class=&quot;xxbtn&quot;&gt;
+            &lt;wx-open-launch-weapp id=&quot;launch-btn&quot; :username=&quot;id&quot; :path=&quot;`${url}.html`&quot;&gt;
+                &lt;script type=&quot;text/wxtag-template&quot;&gt;
+                    &lt;style&gt;.openbtn { display: block;width: 280px;height: 42px;line-height: normal;border: none;background-color: #11961c;color: #fff;font-size: 18px;border-radius: 6px;}&lt;/style&gt;
+                    &lt;button class=&quot;openbtn&quot;&gt;打开小程序&lt;/button&gt;
+                &lt;/script&gt;
+            &lt;/wx-open-launch-weapp&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+  html 页面可以用 &lt;template&gt;&lt;/template&gt; 标签包裹，Vue 页面要改用 &lt;script type=&quot;text/wxtag-template&quot;&gt;&lt;/script&gt; 包裹
+
+
+&lt;script&gt;
+import {
+    isInWechat, isInApp, getUrlParamValue, getToken
+} from '@/common/util/env-helper'
+import { getSignData } from '../service/api'
+
+export default {
+    name: 'Home',
+    data() {
+        return {
+            isInWechat: isInWechat(),
+            isInApp: isInApp(),
+            code: getUrlParamValue('code'),
+            token: getToken(),
+            id: '',
+            url: ''
+        }
+    },
+    created() {
+        const { id, url } = this.$route.query
+        this.id = id
+        this.url = url
+    },
+    async mounted() {
+        if (this.id &amp;&amp; this.url) {
+            await this.pageConfig()
+        }
+    },
+    methods: {
+        async pageConfig() {
+            console.log('this.isInApp :&gt;&gt; ', this.isInApp)
+            if (this.isInApp) {
+                // const data = await checkUser()
+                // if (data) {
+                //     this.$router.push('/record')
+                // }
+            }
+            // if (this.isInWechat) {}
+            const params = {
+                version: '2.0.0',
+                type: 'H5',
+                // url: 'https://cxxxxxx.com/szswj/stg2/app/feature/reserve/#/'
+                url: window.location.href.split('#')[0]
+            }
+            const res = await getSignData(params)
+            console.log('res', res.data)
+            const info = res.data
+            const configs = {
+                debug: true,
+                appId: 'wx123456789',
+                ...info,
+                jsApiList: [
+                    'showOptionMenu',
+                    'updateAppMessageShareData',
+                    'updateTimelineShareData',
+                    'chooseImage',
+                    'previewImage'
+                ],
+                openTagList: ['wx-open-launch-weapp'] // 必填，需要使用的JS接口列表
+            }
+
+            console.log('configs---', configs)
+            window.wx.config(configs)
+
+            window.wx.ready(() =&gt; {
+                console.log('ready')
+                // window.wx.updateAppMessageShareData(shareData) // “分享给朋友”及“分享到QQ”
+                // window.wx.updateTimelineShareData(shareData) // “分享到朋友圈”及“分享到QQ空间”
+            })
+            window.wx.error(resp =&gt; {
+                console.error(`[WechatAgent--] 初始化微信sdk时发生异常: ${JSON.stringify(resp)}`)
+            })
+        }
+    }
+}
+&lt;/script&gt;
+&lt;style lang=&quot;scss&quot; scoped&gt;
+.xxbtn{
+    margin: 200px auto 0;
+    width:280px;
+}
+
+&lt;/style&gt;
+</code></pre>
+<p><strong>类似案例:</strong><br>
+https://developers.weixin.qq.com/community/develop/article/doc/0006ac9d35cc38455deb68ee350813<br>
+https://www.cnblogs.com/Can-daydayup/p/15404964.html#_label1<br>
+https://blog.csdn.net/Angelheca/article/details/125444337<br>
+https://blog.csdn.net/qq_32684617/article/details/124901270<br>
+https://blog.csdn.net/weixin_44265066/article/details/125673122    云函数跳转</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/wei-xin-er-ci-fen-xiang-chang-jian-wen-ti/">
+              <span class="post-title">
+                微信二次分享常见问题&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+            <li class="list-inline-item">
+              <a href="https://tutusiji.github.io" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://www.tuziki.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted"><span><a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备14062482号</a>
+            <!-- TUZIKI的个人记录</span> -->
+            <!-- <br><a href="https://github.com/getgridea/gridea" class="Themeinfo"></a> -->
+          </p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

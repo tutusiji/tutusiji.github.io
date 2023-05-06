@@ -1,15 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.tuziki.com</id>
-    <title>TUZIKI的编程干饭记录</title>
-    <updated>2023-05-03T11:12:54.188Z</updated>
+    <title>TUZIKI的个人记录</title>
+    <updated>2023-05-06T20:37:23.146Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.tuziki.com"/>
     <link rel="self" href="https://www.tuziki.com/atom.xml"/>
     <subtitle>乘风破浪 负重前行</subtitle>
     <logo>https://www.tuziki.com/images/avatar.png</logo>
     <icon>https://www.tuziki.com/favicon.ico</icon>
-    <rights>All rights reserved 2023, TUZIKI的编程干饭记录</rights>
+    <rights>All rights reserved 2023, TUZIKI的个人记录</rights>
+    <entry>
+        <title type="html"><![CDATA[web动画深入学习]]></title>
+        <id>https://www.tuziki.com/web-dong-hua-shen-ru-xue-xi/</id>
+        <link href="https://www.tuziki.com/web-dong-hua-shen-ru-xue-xi/">
+        </link>
+        <updated>2023-05-06T20:14:48.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[规则引擎]]></title>
+        <id>https://www.tuziki.com/gui-ze-yin-qing/</id>
+        <link href="https://www.tuziki.com/gui-ze-yin-qing/">
+        </link>
+        <updated>2023-05-06T20:09:58.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据平台流程]]></title>
+        <id>https://www.tuziki.com/shu-ju-ping-tai-liu-cheng/</id>
+        <link href="https://www.tuziki.com/shu-ju-ping-tai-liu-cheng/">
+        </link>
+        <updated>2023-05-06T20:06:06.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《小程序开发实践与优化》]]></title>
+        <id>https://www.tuziki.com/lesslessxiao-cheng-xu-kai-fa-shi-jian-yu-you-hua-greatergreater/</id>
+        <link href="https://www.tuziki.com/lesslessxiao-cheng-xu-kai-fa-shi-jian-yu-you-hua-greatergreater/">
+        </link>
+        <updated>2023-05-06T18:49:28.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[微信中h5页面跳转微信小程序注意事项]]></title>
+        <id>https://www.tuziki.com/wei-xin-zhong-h5-ye-mian-tiao-zhuan-wei-xin-xiao-cheng-xu-zhu-yi-shi-xiang/</id>
+        <link href="https://www.tuziki.com/wei-xin-zhong-h5-ye-mian-tiao-zhuan-wei-xin-xiao-cheng-xu-zhu-yi-shi-xiang/">
+        </link>
+        <updated>2023-05-06T18:12:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[微信二次分享常见问题]]></title>
+        <id>https://www.tuziki.com/wei-xin-er-ci-fen-xiang-chang-jian-wen-ti/</id>
+        <link href="https://www.tuziki.com/wei-xin-er-ci-fen-xiang-chang-jian-wen-ti/">
+        </link>
+        <updated>2023-05-06T17:52:41.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[供应商评价标准&&外包管理体系总结]]></title>
+        <id>https://www.tuziki.com/gong-ying-shang-ping-jie-biao-zhun/</id>
+        <link href="https://www.tuziki.com/gong-ying-shang-ping-jie-biao-zhun/">
+        </link>
+        <updated>2023-05-06T17:49:47.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[swiper再度踩坑指南]]></title>
+        <id>https://www.tuziki.com/swiper-zai-du-cai-keng-zhi-nan/</id>
+        <link href="https://www.tuziki.com/swiper-zai-du-cai-keng-zhi-nan/">
+        </link>
+        <updated>2023-05-06T17:29:43.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[mongodb安装]]></title>
         <id>https://www.tuziki.com/mongodb-an-zhuang/</id>
@@ -23,147 +79,5 @@
         <link href="https://www.tuziki.com/vuex-zhong-store-yun-yong-requirecontext-gai-zao-wei-bian-jie-de-guan-li-zhuang-tai-qi/">
         </link>
         <updated>2020-12-11T03:21:45.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[vue与react生成前端二维码的QRcode组件使用]]></title>
-        <id>https://www.tuziki.com/vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong/</id>
-        <link href="https://www.tuziki.com/vue-yu-react-sheng-cheng-qian-duan-er-wei-ma-de-qrcode-zu-jian-shi-yong/">
-        </link>
-        <updated>2020-12-10T07:14:04.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="vue版本">VUE版本：</h2>
-<h3 id="安装">安装:</h3>
-<pre><code class="language-html">npm install qrcode
-
-import QRCode from 'qrcode'
-</code></pre>
-<h3 id="dom">DOM:</h3>
-<pre><code class="language-html">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
-</code></pre>
-<h3 id="页面调用">页面调用</h3>
-<pre><code class="language-javascript">this.useqrcode('http://www.baidu.com')
-
-useqrcode(url) {
-    const canvas = document.getElementById('canvas')
-    QRCode.toCanvas(
-        canvas,
-        url,
-        {
-            scale: 5.0,
-            height: 180,
-            wight: 180
-        },
-        error =&gt; {
-            if (error) console.error(error)
-            console.log('success!')
-        }
-    )
-}
-
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="vue版本">VUE版本：</h2>
-<h3 id="安装">安装:</h3>
-<pre><code class="language-html">npm install qrcode
-
-import QRCode from 'qrcode'
-</code></pre>
-<h3 id="dom">DOM:</h3>
-<pre><code class="language-html">&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
-</code></pre>
-<h3 id="页面调用">页面调用</h3>
-<pre><code class="language-javascript">this.useqrcode('http://www.baidu.com')
-
-useqrcode(url) {
-    const canvas = document.getElementById('canvas')
-    QRCode.toCanvas(
-        canvas,
-        url,
-        {
-            scale: 5.0,
-            height: 180,
-            wight: 180
-        },
-        error =&gt; {
-            if (error) console.error(error)
-            console.log('success!')
-        }
-    )
-}
-
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[VUE中watch 和 computed的区别详解]]></title>
-        <id>https://www.tuziki.com/vue-zhong-watch-he-computed-de-qu-bie-xiang-jie/</id>
-        <link href="https://www.tuziki.com/vue-zhong-watch-he-computed-de-qu-bie-xiang-jie/">
-        </link>
-        <updated>2020-12-09T08:55:45.000Z</updated>
-        <summary type="html"><![CDATA[<p><code>watch</code>: 监视,能够监听到数据的变化,只要数据变化的时候,都会自定执行对应的方法,其中可以检测的数据来源分为三部分 data , computed , props</p>
-<h3 id="侦听属性watch">侦听属性watch：</h3>
-<blockquote></blockquote>
-<ul>
-<li>不支持缓存，数据变，直接会触发相应的操作</li>
-<li>watch支持异步</li>
-<li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值</li>
-<li>当一个属性发生变化时，需要执行对应的操作；一对多</li>
-<li>监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数：</li>
-</ul>
-<blockquote></blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<p><code>watch</code>: 监视,能够监听到数据的变化,只要数据变化的时候,都会自定执行对应的方法,其中可以检测的数据来源分为三部分 data , computed , props</p>
-<h3 id="侦听属性watch">侦听属性watch：</h3>
-<blockquote></blockquote>
-<ul>
-<li>不支持缓存，数据变，直接会触发相应的操作</li>
-<li>watch支持异步</li>
-<li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值</li>
-<li>当一个属性发生变化时，需要执行对应的操作；一对多</li>
-<li>监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数：</li>
-</ul>
-<blockquote></blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【算法】二维数组转树形数据结构]]></title>
-        <id>https://www.tuziki.com/suan-fa-er-wei-shu-zu-zhuan-shu-xing-shu-ju-jie-gou/</id>
-        <link href="https://www.tuziki.com/suan-fa-er-wei-shu-zu-zhuan-shu-xing-shu-ju-jie-gou/">
-        </link>
-        <updated>2020-10-16T06:25:19.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【算法】整数反转]]></title>
-        <id>https://www.tuziki.com/zheng-shu-fan-zhuan/</id>
-        <link href="https://www.tuziki.com/zheng-shu-fan-zhuan/">
-        </link>
-        <updated>2020-10-16T06:17:22.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【工作日历】开发架构图]]></title>
-        <id>https://www.tuziki.com/gong-zuo-ri-li-kai-fa-jia-gou-tu/</id>
-        <link href="https://www.tuziki.com/gong-zuo-ri-li-kai-fa-jia-gou-tu/">
-        </link>
-        <updated>2020-05-18T17:26:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[nginx开启gzip压缩]]></title>
-        <id>https://www.tuziki.com/nginx-kai-qi-gzip-ya-suo/</id>
-        <link href="https://www.tuziki.com/nginx-kai-qi-gzip-ya-suo/">
-        </link>
-        <updated>2020-05-14T11:53:36.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[前端有多少种方式实现一个十字架？]]></title>
-        <id>https://www.tuziki.com/qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia/</id>
-        <link href="https://www.tuziki.com/qian-duan-you-duo-shao-chong-fang-shi-shi-xian-yi-ge-shi-zi-jia/">
-        </link>
-        <updated>2020-05-12T18:31:12.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JavaScript -- 定义二维数组]]></title>
-        <id>https://www.tuziki.com/javascript-ding-yi-er-wei-shu-zu/</id>
-        <link href="https://www.tuziki.com/javascript-ding-yi-er-wei-shu-zu/">
-        </link>
-        <updated>2020-05-06T16:22:55.000Z</updated>
     </entry>
 </feed>

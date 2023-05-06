@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>微信二次分享常见问题 | TUZIKI的个人记录</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="微信二次分享常见问题 | TUZIKI的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MJVLDZBD"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-K8MJVLDZBD');</script>
+  
+
+    <meta property="og:description" content="微信二次分享常见问题"/>
+    <meta property="og:url" content="https://www.tuziki.com/wei-xin-er-ci-fen-xiang-chang-jian-wen-ti/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUZIKI的个人记录"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.tuziki.com">TUZIKI的个人记录</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">码字</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/project">小项目</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>微信二次分享常见问题</h1>
+            <span class="meta">
+            	Posted on
+              2023-05-07，6 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <h3 id="1-需要调用比较新的jssdk">1、需要调用比较新的JSSDK</h3>
+<p><code>&lt;script src=&quot;//res.wx.qq.com/open/js/jweixin-1.6.0.js&quot;&gt;&lt;/script&gt;</code></p>
+<h3 id="2-是否微信环境判断">2、是否微信环境判断</h3>
+<pre><code class="language-javascript">const isWeChat = () =&gt; {
+    // window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+    const ua = window.navigator.userAgent.toLowerCase()
+    // 通过正则表达式匹配ua中是否含有MicroMessenger字符串
+    // eslint-disable-next-line
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true
+    }
+    return false
+}
+</code></pre>
+<h3 id="3-发送请求拿到后端的校验签名">3、发送请求拿到后端的校验签名</h3>
+<pre><code class="language-javascript">import axios from 'axios'
+import { isWeChat } from './env-helper'
+
+if (isWeChat()) {
+    // 微信二次分享
+    const data = {
+        version: '2.0.0',
+        type: 'H5',
+        url: window.location.href.split('#')[0]
+    }
+    const shareData = {
+        title: '', // 分享标题
+        desc: '', // 分享描述
+        link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号 JS 安全域名一致
+        imgUrl: '', // 分享图标
+        success: function () {
+          // 设置成功
+        }
+    }
+    axios({
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'post',
+        url: `//${apiBase}/coupon/weixin/getWeixinShareCfg`,
+        data: JSON.stringify(data)
+    })
+        .then((res) =&gt; {
+            const info = res.data.data
+            window.wx.config({
+                  debug: true, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来，若要查看传入的参数，可以在 pc 端打开，参数信息会通过 log 打出，仅在 pc 端时才会打印。
+                  appId: '', // 必填，公众号的唯一标识
+                  timestamp: , // 必填，生成签名的时间戳
+                  nonceStr: '', // 必填，生成签名的随机串
+                  signature: '',// 必填，签名
+                  ...info,
+                  jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 必填，需要使用的JS接口列表
+            })
+            window.wx.ready(() =&gt; {
+                window.wx.updateAppMessageShareData(shareData) // “分享给朋友”及“分享到QQ”
+                window.wx.updateTimelineShareData(shareData) // “分享到朋友圈”及“分享到QQ空间”
+            })
+            window.wx.error((resp) =&gt; {
+                console.error(`[WechatAgent] 初始化微信sdk时发生异常: ${JSON.stringify(resp)}`)
+            })
+        })
+        .catch((error) =&gt; {
+            console.error(`[WechatAgent] 调用微信sdk初始化配置接口时发生异常: ${JSON.stringify(error)}`)
+      })}
+</code></pre>
+<p>这样即为注册微信分享和朋友圈分享成功。</p>
+<p><strong>如果还是分享不成功或者 微信调用时，提示invalid signature，即签名错误解决办法：</strong><br>
+一、接口配置信息配置，配置这项主要用于你自己服务器检验确定信息来自微信服务器。必须配置，但你可以不使用，你能通过这个配置判断信息是不是微信服务器的返回结果，避免网络安全中有人伪装微信服务器给你返回结果。当然如果你觉得自己的公众号程序达不到让人伪装欺诈的地步，你可以配置了不使用。按照接入接口教程还是比较容易完成的。<br>
+<img src="https://www.tuziki.com/post-images/1683396058261.png" alt="" loading="lazy"><br>
+二、JS接口安全域名配置，微信服务器只响应配置的域名服务器进行JS接口调用，并且避免有人截断伪造信息，还需要利用微信公众号的方法进行签名认证。<br>
+<img src="https://www.tuziki.com/post-images/1683396148069.png" alt="" loading="lazy"><br>
+三、配置好两边的服务器后，也会出现签名无效。</p>
+<p>配置Js安全接口域名，微信服务器可以保证请求是你的服务器发出的，Signature可以保证数据传输途中没有被人截断修改过。</p>
+<p>invalid signature签名错误。建议按如下顺序检查：</p>
+<p>1.确认签名算法正确，可用http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign 页面工具进行校验。<br>
+2.确认config中nonceStr（js中驼峰标准大写S）, timestamp与用以签名中的对应noncestr, timestamp一致。<br>
+3.确认url是页面完整的url(请在当前页面alert(location.href.split('#')[0])确认)，包括'http(s)😕/'部分，以及'？'后面的GET参数部分,但不包括'#'hash后面的部分。<br>
+4.确认 config 中的 appid 与用来获取 jsapi_ticket 的 appid 一致。<br>
+5.确保一定缓存access_token和jsapi_ticket。<br>
+<strong>6.确保你获取用来签名的url是动态获取的，动态页面可参见实例代码中php的实现方式。如果是html的静态页面在前端通过ajax将url传到后台签名，前端需要用js获取当前页面除去'#'hash部分的链接（可用location.href.split('#')[0]获取,而且需要encodeURIComponent），因为页面一旦分享，微信客户端会在你的链接末尾加入其它参数，如果不是动态获取当前链接，将导致分享后的页面签名失败。</strong></p>
+<p>这个过程中最容易出错的是第6步， 如果签名一致，那问题基本出在浏览器访问的url和参与生成签名的url不一致。<br>
+第6步中（1）将微信请求的链接提取出来var htmlUrl = location.href.split('#')[0];<br>
+（2）encodeURIComponent(htmlUrl)；传送到后台的URl要经过encodeURIComponent()处理。</p>
+<pre><code class="language-javascript">$(function (){
+	var htmlUrl = location.href.split('#')[0];
+	$.ajax({type:&quot;POST&quot;, url:&quot;${contextPath}RealTimeTicket.do&quot;, data:{&quot;code&quot;:1, &quot;htmlUrl&quot;: encodeURIComponent(htmlUrl)}, dataType:&quot;JSON&quot;,
+		success: function(res) {
+		       if('success' == res.result){
+				wx.config({
+				    debug: true, 
+					appId: res.appId, // 必填，公众号的唯一标识
+					timestamp: res.timestamp, // 必填，生成签名的时间戳
+					nonceStr: res.nonceStr, // 必填，生成签名的随机串
+					signature: res.signature,// 必填，签名
+					jsApiList: [&quot;openLocation&quot;, &quot;getLocation&quot;] 
+					});
+						console.log('successful');
+					} else {
+						alert('ticket获取失败!');
+					}
+				}
+			});
+</code></pre>
+<p>（3）Java后台获取URl生成Signature，URL也要经过反encodeURI处理String URL=new java.net.URI(htmlUrl).getPath();这样获取的链接才是微信服务器生成Signature所用的URL。试想一下：你生成Signature用的是你自己获得的URL，微信服务器生成Signature用的是它实际收到请求的URL,两者生成的signature肯定不一样，微信服务器肯定返回你的Signature无效（invalid signature）</p>
+<p>微信 JS 接口签名校验工具<br>
+https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign</p>
+<p>分享接口及参数<br>
+https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#4</p>
+<p>（部分知识点总结来自https://blog.csdn.net/zhh0310235/article/details/102835292）</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/gong-ying-shang-ping-jie-biao-zhun/">
+              <span class="post-title">
+                供应商评价标准&amp;&amp;外包管理体系总结&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+            <li class="list-inline-item">
+              <a href="https://tutusiji.github.io" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://www.tuziki.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted"><span><a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备14062482号</a>
+            <!-- TUZIKI的个人记录</span> -->
+            <!-- <br><a href="https://github.com/getgridea/gridea" class="Themeinfo"></a> -->
+          </p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

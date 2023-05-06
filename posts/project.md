@@ -14,6 +14,7 @@ isTop: false
 *  网易——数帆https://sf.163.com/，金融低代码平台
 *  阿里——LowCodeEngine，https://lowcode-engine.cn/index，功能强大，物料齐全
 *  阿里——宜搭https://www.aliwork.com/，表单流程数据可视化，模板多，功能丰富
+*  腾讯——微搭https://weda.cloud.tencent.com/index/，颗粒度很细，构建复杂的自动化业务流程，轻松搭建微信小程序和企业生产管理系统
 
 **低代码库：**
 SpreadJS ——https://www.grapecity.com.cn/developer/spreadjs，在线Excel

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>swiper再度踩坑指南 | TUZIKI的个人记录</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://www.tuziki.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://www.tuziki.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="swiper再度踩坑指南 | TUZIKI的个人记录 » Feed" href="https://www.tuziki.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://www.tuziki.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MJVLDZBD"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-K8MJVLDZBD');</script>
+  
+
+    <meta property="og:description" content="swiper再度踩坑指南"/>
+    <meta property="og:url" content="https://www.tuziki.com/swiper-zai-du-cai-keng-zhi-nan/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="TUZIKI的个人记录"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.tuziki.com">TUZIKI的个人记录</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">码字</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/project">小项目</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://www.tuziki.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+        </span>
+            <h1>swiper再度踩坑指南</h1>
+            <span class="meta">
+            	Posted on
+              2023-05-07，7 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <p>swiper3~8众多版本中,如果不能找对版本和使用方式,会很难受.<br>
+实现移动端轮播图,并且有缩放图片功能的方法很多</p>
+<h2 id="第一种需要考虑横屏滑动使用swiper">第一种,需要考虑横屏滑动,使用swiper</h2>
+<p>功能需要完成横竖屏滑动,图片放大功能,左右点击<br>
+在vue2项目中使用需要注意的:<br>
+安装时需要 npm install swiper@4  才能指定安装4的版本,<br>
+其他拓展api方法可以看 https://v1.github.surmon.me/vue-awesome-swiper/  ,以及 swiper3的api,使用时需要注意哪些是4以上才可以使用的 https://www.swiper.com.cn/api/loop/22.html<br>
+(有时候不能缩放是因为html文件上设置了禁止缩放,但是如果是按下面的方法操作应该不用考虑这个问题  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">)</p>
+<pre><code class="language-javascript">&quot;swiper&quot;: &quot;^4.5.1&quot;,
+&quot;vant&quot;: &quot;^2.10.2&quot;,
+&quot;vue&quot;: &quot;^2.6.14&quot;,
+&quot;vue-awesome-swiper&quot;: &quot;^3.1.3&quot;,
+</code></pre>
+<p>下面是完整的页面:<br>
+其中包含了延时加载和横屏遮罩功能;<br>
+以后的这种项目只需要上传好完图片到服务器，即可使用，不用再开发；<br>
+填好对应的值，page 服务器文件夹名称，title 图片展名称，num 图片总数， vertical 是否横屏true false ，type 图片格式<br>
+https://xxxx.com/#/imageshow?page=dashaRiver&amp;title=xxx图片展&amp;num=61&amp;vertical=false&amp;type=png</p>
+<pre><code class="language-javascript">&lt;template&gt;
+    &lt;div&gt;
+        &lt;swiper
+            class=&quot;swiper-container&quot;
+            :options=&quot;swiperOption&quot;
+            ref=&quot;imgOverview&quot;
+            style=&quot;height: 100%;&quot;
+        &gt;
+            &lt;swiper-slide class=&quot;swiper-slide&quot; v-for=&quot;img in list&quot; :key=&quot;img&quot;&gt;
+                &lt;div class=&quot;swiper-zoom-container&quot;&gt;
+                    &lt;img :data-src=&quot;img&quot; alt=&quot;&quot; class=&quot;swiper-lazy&quot; /&gt;
+                    &lt;div class=&quot;swiper-lazy-preloader&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/swiper-slide&gt;
+            &lt;div
+                id=&quot;swiper-pagination&quot;
+                :class=&quot;['swiper-pagination', `${this.pageVertical &amp;&amp; 'vv'}`]&quot;
+                slot=&quot;pagination&quot;
+            &gt;&lt;/div&gt;
+            &lt;!-- 分页 --&gt;
+            &lt;div class=&quot;btnL swiper-button-prev&quot; slot=&quot;button-prev&quot; v-if=&quot;!pageVertical&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;btnR swiper-button-next&quot; slot=&quot;button-next&quot; v-if=&quot;!pageVertical&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;btnT swiper-button-prev&quot; slot=&quot;button-prev&quot; v-if=&quot;pageVertical&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;btnB swiper-button-next&quot; slot=&quot;button-next&quot; v-if=&quot;pageVertical&quot;&gt;&lt;/div&gt;
+        &lt;/swiper&gt;
+        &lt;van-overlay :show=&quot;showOverlay&quot; @click=&quot;showOverlay = false&quot;&gt;
+            &lt;div class=&quot;wrapper&quot; @click.stop&gt;
+                请横屏观看
+            &lt;/div&gt;
+        &lt;/van-overlay&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import 'swiper/dist/css/swiper.min.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
+export default {
+    name: 'showPic',
+    data() {
+        return {
+            current: 0,
+            list: [],
+            showOverlay: false,
+            pageKey: '',
+            pageTitle: '',
+            pageNum: '',
+            pageType: '',
+            pageVertical: true,
+            swiperOption: {
+                direction: this.$route.query.vertical === 'false' ? 'horizontal' : 'vertical',
+                width: window.innerWidth,
+                height: window.innerHeight,
+                // zoom: true,
+                loop: true,
+                zoom: {
+                    minRatio: 1,
+                    maxRatio: 10
+                },
+                lazy: true,
+                initialSlide: 0,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '#swiper-pagination',
+                    type: 'fraction'
+                }
+            }
+        }
+    },
+    components: {
+        swiper,
+        swiperSlide
+    },
+    created() {
+        const {
+            page, title, num, vertical, type
+        } = this.$route.query
+        if (page) {
+            this.pageKey = page
+            this.pageTitle = title
+            this.pageNum = num
+            this.pageVertical = vertical !== 'false'
+            this.pageType = type
+            document.title = title
+            this.showOverlay = vertical === 'true'
+            setTimeout(() =&gt; {
+                this.showOverlay = false
+            }, 2200)
+            this.cutImg()
+        }
+    },
+    mounted() {},
+    methods: {
+        cutImg() {
+            const list = []
+            for (let index = 1; index &lt;= this.pageNum; index++) {
+                list.push(
+                    `https://xxxx.com/prod/lib/${this.pageKey}/${index}.${this.pageType}`
+                )
+            }
+            this.list = list
+        }
+    }
+}
+&lt;/script&gt;
+
+&lt;style lang=&quot;scss&quot; scoped&gt;
+.van-overlay {
+    z-index: 10000;
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color:#fff;
+}
+.btnL,
+.btnR,
+.btnT,
+.btnB {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+}
+.btnL {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    background: url('../asset/img/arrow-left.png') center no-repeat;
+    background-size: 30px;
+}
+.btnR {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background: url('../asset/img/arrow-right.png') center no-repeat;
+    background-size: 30px;
+}
+.btnT {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: url('../asset/img/arrow-up.png') center no-repeat;
+    background-size: 30px;
+}
+.btnB {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: url('../asset/img/arrow-down.png') center no-repeat;
+    background-size: 30px;
+}
+// width: 7.5rem;
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-slide img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .swiper-pagination {
+        z-index: 10000;
+        position: fixed;
+        bottom: 8px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 50px;
+        height: 20px;
+        text-align: center;
+        font-size: 12px;
+        &amp;.vv {
+            top: 50%;
+            left: -28px;
+            bottom: 0;
+            transform: rotateZ(90deg) translate(0, -50%);
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: fixed;
+        outline: none;
+        &amp;:active {
+            border: none;
+        }
+        &amp;:focus-visible {
+            border: none;
+        }
+    }
+}
+&lt;/style&gt;
+</code></pre>
+<h2 id="第二种不需要考虑横屏滑动且全屏预览使用-vant的-imagepreview组件">第二种,不需要考虑横屏滑动,且全屏预览,使用 vant的 ImagePreview组件</h2>
+<p>图片放大预览，支持函数调用和组件调用两种方式,用vue的vant组件库中的 ImagePreview 组件即可 , https://youzan.github.io/vant/v2/#/zh-CN/image-preview</p>
+<ol>
+<li>函数调用</li>
+</ol>
+<pre><code class="language-javascript">import { ImagePreview } from 'vant';
+ImagePreview({
+  images: [
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
+  ],
+    startPosition: 1,    // 初始位置
+    showIndex: false,    // 是否显示页码
+    closeable: true,      // 是否显示关闭图标
+});需要注意的是,常规调用预览模式,手指点击一下,整个预览状态就会消失,需要开启异步调用方式来阻止,开启异步之后,除非手动关闭,不然会一直存在
+const instance = ImagePreview({
+       images: this.list,
+       asyncClose: true
+})
+
+setTimeout(() =&gt; {
+  instance.close();    // 
+}, 2000);2.组件调用
+&lt;van-image-preview v-model=&quot;show&quot; :images=&quot;images&quot; @change=&quot;onChange&quot;&gt;
+  &lt;template v-slot:index&gt;第{{ index }}页&lt;/template&gt;
+&lt;/van-image-preview&gt;
+export default {
+  data() {
+    return {
+      show: false,
+      index: 0,
+      images: [
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
+      ],
+    };
+  },
+  methods: {
+    onChange(index) {
+      this.index = index;
+    },
+  },
+};
+</code></pre>
+<h2 id="第三种最基础的左右滑屏">第三种,最基础的左右滑屏</h2>
+<p>即可以用vant 的 Swipe 轮播<br>
+也可以用 swiper https://www.swiper.com.cn/api/loop/22.html<br>
+项目中已经有了vant,就可以直接用了,毕竟swiper很重</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://www.tuziki.com/mongodb-an-zhuang/">
+              <span class="post-title">
+                mongodb安装&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+            <li class="list-inline-item">
+              <a href="https://tutusiji.github.io" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://www.tuziki.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted"><span><a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备14062482号</a>
+            <!-- TUZIKI的个人记录</span> -->
+            <!-- <br><a href="https://github.com/getgridea/gridea" class="Themeinfo"></a> -->
+          </p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://www.tuziki.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+
