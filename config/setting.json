@@ -2,17 +2,17 @@
   "config": {
     "branch": "develop",
     "cname": "www.tuziki.com",
-    "domain": "https://www.tuziki.com",
+    "domain": "https://www.joox.cc",
     "email": "123507356@q.com",
-    "password": "@huangkun589",
+    "password": "",
     "platform": "sftp",
     "port": 22,
-    "privateKey": "",
+    "privateKey": "C:\\Users\\tutuWinHome\\.ssh\\TutuLinux_key.pem",
     "remotePath": "/home/www_blog/",
     "repository": "tutusiji.github.io",
-    "server": "43.139.4.12",
+    "server": "52.140.223.217",
     "token": "@hk123321",
-    "username": "root"
+    "username": "azureuser"
   },
   "comment": {
     "commentPlatform": "gitalk",
